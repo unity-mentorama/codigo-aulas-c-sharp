@@ -11,7 +11,7 @@ public class IfElse : MonoBehaviour
 		}
 		else
 		{
-			Debug.Log("falso");
+			//Debug.Log("falso");
 		}
 
 		int a = 1;

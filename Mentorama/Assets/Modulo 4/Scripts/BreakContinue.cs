@@ -1,49 +1,21 @@
 using UnityEngine;
 
-public class Loops : MonoBehaviour
+public class BreakContinue : MonoBehaviour
 {
 	// Start is called before the first frame update
 	void Start()
 	{
-		while (true)
-		{
-			break;
-		}
-
-		do
-		{
-			break;
-		} while (true);
-
-		for (; ; )
-		{
-			break;
-		}
-
-		PrintPrimeNumbersUntil(100000);
-		//Debug.Log(Factorial(5));
-	}
-
-	int Factorial(int number)
-	{
-		int result = number;
-
-		while (number > 1)
-		{
-			number--;
-			result *= number;
-		}
-
-		return result;
+		Break();
+		Continue();
 	}
 
 	void Break()
 	{
-		for (int i = 0; i < 10; i++)
+		for (int i = 0; i < 10;)// i++)
 		{
 			Debug.Log($"Before 'break': {i}");
 			break;
-			Debug.Log($"After 'break': {i}");
+			//Debug.Log($"After 'break': {i}");
 		}
 	}
 
@@ -53,10 +25,11 @@ public class Loops : MonoBehaviour
 		{
 			Debug.Log($"Before 'continue': {i}");
 			continue;
-			Debug.Log($"After 'continue': {i}");
+			//Debug.Log($"After 'continue': {i}");
 		}
 	}
 
+	// Exemplo prático break
 	int FindFirstDivisibleNumber(int number)
 	{
 		int result = 2;
@@ -64,13 +37,14 @@ public class Loops : MonoBehaviour
 		{
 			if (number % result == 0)
 			{
-				break;
+				break; // Pode colocar return aqui tmb
 			}
 			result++;
 		}
 		return result;
 	}
 
+	// Exemplo prático continue (não precisa)
 	int FindFirstOddDivisibleNumber(int number)
 	{
 		int result = 3;
@@ -84,7 +58,7 @@ public class Loops : MonoBehaviour
 
 			if (number % result == 0)
 			{
-				break;
+				break; // Return funcionaria também
 			}
 
 			result++;
@@ -92,6 +66,7 @@ public class Loops : MonoBehaviour
 		return result;
 	}
 
+	// Exemplo prático for + continue
 	void PrintPrimeNumbersUntil(int number)
 	{
 		for (int i = 2; i <= number; i++)

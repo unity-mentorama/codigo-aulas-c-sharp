@@ -225,8 +225,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1277388245}
-  - component: {fileID: 1277388246}
   - component: {fileID: 1277388244}
+  - component: {fileID: 1277388246}
   - component: {fileID: 1277388247}
   m_Layer: 0
   m_Name: Scripts
@@ -244,16 +244,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1277388243}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 291688ffa3d10184087a6a7d40f7c335, type: 3}
+  m_Script: {fileID: 11500000, guid: 471e6f39f96a81f49b8b033984f814ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  names:
-  - Lex
-  - Jorge
-  - Lucas
-  - Laura
-  - Jones
-  - Camila
+  gameState: 0
 --- !u!4 &1277388245
 Transform:
   m_ObjectHideFlags: 0
@@ -277,16 +271,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1277388243}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e245b5b3b974ce439adb618cbc62790, type: 3}
+  m_Script: {fileID: 11500000, guid: a21e98fe5b73802428c55167e0d09cdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Names:
-  - Lex
-  - Jorge
-  - Lucas
-  - Laura
-  - Jones
-  - Camila
+  playerData:
+    Health: 0
+    Score: 0
+  playersData:
+  - Health: 0
+    Score: 0
+  - Health: 0
+    Score: 0
 --- !u!114 &1277388247
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -296,9 +291,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1277388243}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bd1e8f5f21b03f4ba2b9f0a7ce97cb6, type: 3}
+  m_Script: {fileID: 11500000, guid: 3ed1dc82d030175408c691a98363dbfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameState: 0
 --- !u!1 &1469170697
 GameObject:
   m_ObjectHideFlags: 0

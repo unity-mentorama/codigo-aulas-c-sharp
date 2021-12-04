@@ -27,7 +27,7 @@ public class Convertion : MonoBehaviour
 		Debug.Log(myBool);
 
 		//int a = 5 / 0;
-		int z = 0;
+		//int z = 0;
 		//int e = 5 / z;
 
 		int a = int.MaxValue;

@@ -2,16 +2,23 @@ using UnityEngine;
 
 public class Arrays : MonoBehaviour
 {
+	[SerializeField]
+	string[] Names = new string[] { "Lex", "Jorge", "Lucas", "Laura", "Jones", "Camila" };
+
 	void Start()
 	{
+		// Forma básica e inicialização
 		int[] intArray = new int[5];
 		int[] initializedIntArray = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 };
 
+		// Arrays multidimensionais
 		int[,] intMatrix = new int[3, 3];
 		int[,] initializedIntMatrix = new int[,] { { 1, 2, 3 }, { 1, 2, 3 } };
 
+		// Tamanho do array
 		int lengh = intArray.Length;
 
+		// Acesso aos elementos
 		intArray[0] = 1;
 		intArray[intArray.Length - 1] = 3;
 		intMatrix[0, 0] = 1;
@@ -22,6 +29,7 @@ public class Arrays : MonoBehaviour
 		PrintList(initializedIntArray);
 	}
 
+	// Arrays combinam bem com o for
 	void PrintList(int[] list)
 	{
 		for (int i = 0; i < list.Length; i++)
@@ -54,10 +62,9 @@ public class Arrays : MonoBehaviour
 			if (shuffleIndex == i) continue;
 
 			Swap(numberArray, i, shuffleIndex);
-			//int aux = numberArray[i];
-			//numberArray[i] = numberArray[shuffleIndex];
-			//numberArray[shuffleIndex] = aux;
 		}
+
+		// Shuffle indo de trás pra frente
 
 		//for (int i = numberArray.Length - 1; i > 0; i--)
 		//{

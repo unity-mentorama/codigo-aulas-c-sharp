@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Lists : MonoBehaviour
 {
+	[SerializeField]
 	List<string> names = new List<string>(new string[] { "Lex", "Jorge", "Lucas", "Laura", "Jones", "Camila" });
 
 	void Start()
@@ -10,72 +11,42 @@ public class Lists : MonoBehaviour
 		List<int> intList = new List<int>();
 
 		intList.Add(42);
+		PrintList(intList);
 		intList.AddRange(new int[] { 10, 11, 12 });
+		PrintList(intList);
+		intList.Sort();
+		PrintList(intList);
 		intList.Remove(42);
+		PrintList(intList);
 		intList.RemoveAt(0);
+		PrintList(intList);
 		intList.Clear();
-		//intList.Sort()
+		PrintList(intList);
+
+
 
 		List<List<int>> intMatrix = new List<List<int>>();
 
 		//intMatrix[0][0] = 1;
-
-		//PrintList(names);
-		//Debug.Log("============");
-		//RemoveNamesStartingWithLetter(names, 'L');
-		//PrintList(names);
 
 		//IsPalindrome("ama");
 		//IsPalindrome("arara");
 		//IsPalindrome("ararar");
 		//IsPalindrome("ararar2");
 	}
-
-	void PrintList(List<string> list)
+	void PrintList(List<int> list)
 	{
-		foreach (string item in list)
+		string output = "";
+
+		for (int i = 0; i < list.Count; i++)
 		{
-			Debug.Log(item);
+			output += $"{list[i]}, ";
 		}
+
+		Debug.Log(output);
 	}
 
-	void RemoveNamesStartingWithLetter(List<string> list, char letter)
-	{
-		//foreach (string item in list)
-		//{
-		//	if (item[0] == letter)
-		//	{
-		//		list.Remove(item);
-		//	}
-		//}
-
-		//List<string> auxList = new List<string>(list);
-		//foreach (string item in auxList)
-		//{
-		//	if (item[0] == letter)
-		//	{
-		//		list.Remove(item);
-		//	}
-		//}
-
-		//for (int i = 0; i < list.Count; i++)
-		//{
-		//	if (list[i][0] == letter)
-		//	{
-		//		list.Remove(list[i]);
-		//		i--;
-		//	}
-		//}
-
-		for (int i = list.Count - 1; i >= 0; i--)
-		{
-			if (list[i][0] == letter)
-			{
-				list.Remove(list[i]);
-			}
-		}
-	}
-
+	// Strings são "listas", possível acessar index
 	bool IsPalindrome(string word)
 	{
 		// [0][1][2][3][4][5]

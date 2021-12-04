@@ -4,45 +4,45 @@ public class Variables : MonoBehaviour
 {
 	void Start()
 	{
-		int a;
+		//int a;
 		int b;
-		int c, d, e;
-		int a1, a2, a3;
-		int a_1, _a2, a3_;
-		int A, B, C;
-		//int 1a;
-		//int a1, a1;
+		int c;//, d, e;
+			  //int a1, a2, a3;
+			  //int a_1, _a2, a3_;
+			  //int A, B, C;
+			  //int 1a;
+			  //int a1, a1;
 
 		b = 0;
 		c = -1;
 
 		// Internal Types
 		// https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/built-in-types
-		bool boolVariable;          // 1 byte	// false, true (0, 1)
+		//bool boolVariable;          // 1 byte	// false, true (0, 1)
 
-		boolVariable = true;
+		//boolVariable = true;
 
 		// https://docs.microsoft.com/pt-br/dotnet/csharp/language-reference/builtin-types/integral-numeric-types
-		int intVariable;            // 4 bytes	// -2 bi to 2 bi
-		long longVariable;          // 8 bytes	// -9 qi to 9 qi
+		//int intVariable;            // 4 bytes	// -2 bi to 2 bi
+		//long longVariable;          // 8 bytes	// -9 qi to 9 qi
 
 		// https://docs.microsoft.com/pt-br/dotnet/csharp/language-reference/builtin-types/floating-point-numeric-types
-		float floatVariable;        // 4 bytes	// 7 significant digits
+		//float floatVariable;        // 4 bytes	// 7 significant digits
 
-		floatVariable = 0.5f;
-		floatVariable = .5f;
-		floatVariable = -.5f;
+		//floatVariable = 0.5f;
+		//floatVariable = .5f;
+		//floatVariable = -.5f;
 
-		char charVariable;          // 2 bytes	// U+0000 a U+FFFF
-		string stringVariable;      // ????		// Up to 2 bi bytes
+		//char charVariable;          // 2 bytes	// U+0000 a U+FFFF
+		//string stringVariable;      // ????		// Up to 2 bi bytes
 
-		charVariable = 'a';
-		charVariable = 'ª';
-		charVariable = '\n';
-		charVariable = '\t';
+		//charVariable = 'a';
+		//charVariable = 'ª';
+		//charVariable = '\n';
+		//charVariable = '\t';
 
-		stringVariable = "Hello World!";
-		stringVariable = "Hello\nWorld!";
+		//stringVariable = "Hello World!";
+		//stringVariable = "Hello\nWorld!";
 
 		int
 		r = 2;
