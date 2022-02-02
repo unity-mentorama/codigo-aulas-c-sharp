@@ -38,36 +38,36 @@ public class ForeachLoops : MonoBehaviour
 	{
 		// Não funciona, não é permitido modificar
 
-		//foreach (string item in list)
-		//{
-		//	if (item[0] == letter)
-		//	{
-		//		list.Add("Luara"); // Nem adicionar
-		//		list.Remove(item); // Nem remover
-		//	}
-		//}
+		foreach (string item in list)
+		{
+			if (item[0] == letter)
+			{
+				list.Add("Luara"); // Nem adicionar
+				list.Remove(item); // Nem remover
+			}
+		}
 
 		// Criando uma cópia da lista
 
-		//List<string> auxList = new List<string>(list);
-		//foreach (string item in auxList)
-		//{
-		//	if (item[0] == letter)
-		//	{
-		//		list.Remove(item);
-		//	}
-		//}
+		List<string> auxList = new List<string>(list);
+		foreach (string item in auxList)
+		{
+			if (item[0] == letter)
+			{
+				list.Remove(item);
+			}
+		}
 
 		// Usando for
 
-		//for (int i = 0; i < list.Count; i++)
-		//{
-		//	if (list[i][0] == letter)
-		//	{
-		//		list.Remove(list[i]);
-		//		i--; // Sem isso fica errado
-		//	}
-		//}
+		for (int i = 0; i < list.Count; i++)
+		{
+			if (list[i][0] == letter)
+			{
+				list.Remove(list[i]);
+				i--; // Sem isso fica errado
+			}
+		}
 
 		// De trás para frente
 

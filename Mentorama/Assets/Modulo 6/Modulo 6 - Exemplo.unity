@@ -408,7 +408,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   patrolData1:
-    patrolDuration: 5
+    patrolDuration: 2
     moveSpeed: 2
     moveDuration: 1
   patrolData2:

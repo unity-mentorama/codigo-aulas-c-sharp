@@ -1,19 +1,19 @@
 using System;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Patrol : MonoBehaviour
 {
 	enum EnemyState
 	{
 		Stopped,
-		PatrollRoute1,
-		PatrollRoute2
+		PatrollingRoute1,
+		PatrollingRoute2
 	}
 
-	enum PatrolDirection
+	enum PatrolState
 	{
-		Left,
-		Right
+		PatrollingLeft,
+		PatrollingRight
 	}
 
 	[Serializable]
@@ -36,15 +36,15 @@ public class Enemy : MonoBehaviour
 
 	float startPatrolTime;
 
-	float directionChangeTime;
+	float patrolStateChangeTime;
 
-	PatrolDirection patrolState;
+	PatrolState patrolState;
 
 	private void Start()
 	{
-		patrolState = PatrolDirection.Left;
+		patrolState = PatrolState.PatrollingLeft;
 		currentState = EnemyState.Stopped;
-		directionChangeTime = 0;
+		patrolStateChangeTime = 0;
 	}
 
 	void Update()
@@ -56,17 +56,17 @@ public class Enemy : MonoBehaviour
 
 				if (Input.GetKeyDown(KeyCode.Alpha1))
 				{
-					currentState = EnemyState.PatrollRoute1;
+					currentState = EnemyState.PatrollingRoute1;
 					startPatrolTime = Time.time;
 				}
 
 				break;
 
-			case EnemyState.PatrollRoute1:
+			case EnemyState.PatrollingRoute1:
 
 				if (Time.time > startPatrolTime + patrolData1.patrolDuration)
 				{
-					currentState = EnemyState.PatrollRoute2;
+					currentState = EnemyState.PatrollingRoute2;
 					startPatrolTime = Time.time;
 				}
 
@@ -74,7 +74,7 @@ public class Enemy : MonoBehaviour
 
 				break;
 
-			case EnemyState.PatrollRoute2:
+			case EnemyState.PatrollingRoute2:
 
 				if (Time.time > startPatrolTime + patrolData2.patrolDuration)
 				{
@@ -89,34 +89,34 @@ public class Enemy : MonoBehaviour
 
 	void PatrolRoutine(PatrolData patrolData)
 	{
-		directionChangeTime += Time.deltaTime;
+		patrolStateChangeTime += Time.deltaTime;
 
 		switch (patrolState)
 		{
-			case PatrolDirection.Left:
+			case PatrolState.PatrollingLeft:
 
 				Translate(new Vector3(-patrolData.moveSpeed * Time.deltaTime, 0, 0));
 
-				ChangePatrolDirection(patrolData, PatrolDirection.Right);
+				ChangePatrolState(patrolData, PatrolState.PatrollingRight);
 
 				break;
 
-			case PatrolDirection.Right:
+			case PatrolState.PatrollingRight:
 
 				Translate(new Vector3(patrolData.moveSpeed * Time.deltaTime, 0, 0));
 
-				ChangePatrolDirection(patrolData, PatrolDirection.Left);
+				ChangePatrolState(patrolData, PatrolState.PatrollingLeft);
 
 				break;
 		}
 	}
 
-	void ChangePatrolDirection(PatrolData patrolData, PatrolDirection direction)
+	void ChangePatrolState(PatrolData patrolData, PatrolState patrolState)
 	{
-		if (directionChangeTime > patrolData.moveDuration)
+		if (patrolStateChangeTime > patrolData.moveDuration)
 		{
-			patrolState = direction;
-			directionChangeTime = 0;
+			this.patrolState = patrolState;
+			patrolStateChangeTime = 0;
 		}
 	}
 

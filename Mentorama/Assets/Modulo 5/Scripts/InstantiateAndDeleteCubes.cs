@@ -40,10 +40,10 @@ public class InstantiateAndDeleteCubes : MonoBehaviour
 		{
 			// Deletar todos
 
-			//for (int i = 0; i < _allCubes.Count; i++)
-			//{
-			//	Destroy(_allCubes[i]);
-			//}
+			for (int i = 0; i < _allCubes.Count; i++)
+			{
+				Destroy(_allCubes[i]);
+			}
 
 
 
@@ -60,29 +60,29 @@ public class InstantiateAndDeleteCubes : MonoBehaviour
 
 			// Tarefa - Deletar todos com maior altura
 
-			//List<GameObject> highestCubes = new List<GameObject>();
-			//float highestHeight = 0f;
+			List<GameObject> highestCubes = new List<GameObject>();
+			float highestHeight = 0f;
 
 
-			//for (int i = 0; i < _allCubes.Count; i++)
-			//{
-			//	if (_allCubes[i].transform.position.y > highestHeight)
-			//	{
-			//		highestHeight = _allCubes[i].transform.position.y;
-			//		highestCubes.Clear();
-			//	}
+			for (int i = 0; i < _allCubes.Count; i++)
+			{
+				if (_allCubes[i].transform.position.y > highestHeight)
+				{
+					highestHeight = _allCubes[i].transform.position.y;
+					highestCubes.Clear();
+				}
 
-			//	if (_allCubes[i].transform.position.y == highestHeight)
-			//	{
-			//		highestCubes.Add(_allCubes[i]);
-			//	}
-			//}
+				if (_allCubes[i].transform.position.y == highestHeight)
+				{
+					highestCubes.Add(_allCubes[i]);
+				}
+			}
 
-			//for (int i = 0; i < highestCubes.Count; i++)
-			//{
-			//	Destroy(highestCubes[i]);
-			//	_allCubes.Remove(highestCubes[i]);
-			//}
+			for (int i = 0; i < highestCubes.Count; i++)
+			{
+				Destroy(highestCubes[i]);
+				_allCubes.Remove(highestCubes[i]);
+			}
 		}
 	}
 }

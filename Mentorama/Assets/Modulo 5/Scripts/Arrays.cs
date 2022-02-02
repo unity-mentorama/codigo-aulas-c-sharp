@@ -66,14 +66,14 @@ public class Arrays : MonoBehaviour
 
 		// Shuffle indo de trás pra frente
 
-		//for (int i = numberArray.Length - 1; i > 0; i--)
-		//{
-		//	int shuffleIndex = Random.Range(0, i + 1);
+		for (int i = numberArray.Length - 1; i > 0; i--)
+		{
+			int shuffleIndex = Random.Range(0, i + 1);
 
-		//	if (shuffleIndex == i) continue;
+			if (shuffleIndex == i) continue;
 
-		//	Swap(numberArray, i, shuffleIndex);
-		//}
+			Swap(numberArray, i, shuffleIndex);
+		}
 	}
 
 	void Swap(int[] numberArray, int index1, int index2)

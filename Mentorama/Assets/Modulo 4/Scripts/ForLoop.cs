@@ -14,6 +14,11 @@ public class ForLoop : MonoBehaviour
 
 		for (int i = 0; i < 10; i++)
 		{
+			if (i % 2 == 0)
+			{
+				continue;
+			}
+
 			Debug.Log(i);
 		}
 
@@ -28,7 +33,7 @@ public class ForLoop : MonoBehaviour
 		//Debug.Log(FactorialCrescente(_input));
 
 		//FizzBuzz();
-		FizzBuzz2();
+		//FizzBuzz2();
 	}
 
 

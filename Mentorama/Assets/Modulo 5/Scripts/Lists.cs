@@ -27,12 +27,12 @@ public class Lists : MonoBehaviour
 
 		List<List<int>> intMatrix = new List<List<int>>();
 
-		//intMatrix[0][0] = 1;
+		intMatrix[0][0] = 1;
 
-		//IsPalindrome("ama");
-		//IsPalindrome("arara");
-		//IsPalindrome("ararar");
-		//IsPalindrome("ararar2");
+		IsPalindrome("ama");
+		IsPalindrome("arara");
+		IsPalindrome("ararar");
+		IsPalindrome("ararar2");
 	}
 	void PrintList(List<int> list)
 	{

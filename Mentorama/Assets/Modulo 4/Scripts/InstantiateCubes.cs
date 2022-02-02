@@ -9,38 +9,38 @@ public class InstantiateCubes : MonoBehaviour
 	{
 		// Instanciando objetos
 
-		for (int x = 0; x < 10; x++)
-		{
-			for (int z = 0; z < 10; z++)
-			{
-				int columnHeight = Random.Range(1, 5);
+		//for (int x = 0; x < 10; x++)
+		//{
+		//	for (int z = 0; z < 10; z++)
+		//	{
+		//		int columnHeight = Random.Range(1, 5);
 
-				for (int y = 0; y < columnHeight; y++)
-				{
-					Instantiate(_cubePrefab, new Vector3(x, y, z), Quaternion.identity);
-				}
-			}
-		}
+		//		for (int y = 0; y < columnHeight; y++)
+		//		{
+		//			Instantiate(_cubePrefab, new Vector3(x, y, z), Quaternion.identity);
+		//		}
+		//	}
+		//}
 
 		// Feito com while
 
-		//int x = 0;
-		//while (x < 10)
-		//{
-		//	int z = 0;
-		//	while (z < 10)
-		//	{
-		//		int y = 0;
-		//		int columnHeight = Random.Range(1, 5);
-		//		while (y < columnHeight)
-		//		{
-		//			Instantiate(_cubePrefab, new Vector3(x, y, z), Quaternion.identity);
-		//			y++;
-		//		}
-		//		z++;
-		//	}
-		//	x++;
-		//}
+		int x = 0;
+		while (x < 10)
+		{
+			int z = 0;
+			while (z < 10)
+			{
+				int y = 0;
+				int columnHeight = Random.Range(1, 5);
+				while (y < columnHeight)
+				{
+					Instantiate(_cubePrefab, new Vector3(x, y, z), Quaternion.identity);
+					y++;
+				}
+				z++;
+			}
+			x++;
+		}
 
 		// Lição de casa
 

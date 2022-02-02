@@ -36,7 +36,7 @@ public class Structs : MonoBehaviour
 
 		playerData = default;
 
-		//PlayerData newPlayerData = playerData;
-		//newPlayerData.Health = 5;
+		PlayerData newPlayerData = playerData;
+		newPlayerData.Health = 5;
 	}
 }

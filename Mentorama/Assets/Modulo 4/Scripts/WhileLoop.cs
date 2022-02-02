@@ -14,11 +14,11 @@ public class WhileLoop : MonoBehaviour
 		//	//
 		//}
 
-		int i = 0;
-		while (i < 10)
+		int i = 5;
+		while (i >= 0)
 		{
+			i--;
 			Debug.Log(i);
-			i++;
 		}
 
 
@@ -32,7 +32,7 @@ public class WhileLoop : MonoBehaviour
 		i = 0;
 		do
 		{
-			Debug.Log(i);
+			//Debug.Log(i);
 			i++;
 		}
 		while (i < 10);
