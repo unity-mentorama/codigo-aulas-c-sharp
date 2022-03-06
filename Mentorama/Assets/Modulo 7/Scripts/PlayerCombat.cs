@@ -10,10 +10,10 @@ public class PlayerCombat : MonoBehaviour
 
 	void Start()
 	{
-		FinalWeapon sword = new FinalWeapon("Sword", 8);
+		FinalWeapon sword = new Sword();
 		_player1 = new Character("Lex", 100, sword);
 
-		FinalWeapon dagger = new FinalWeapon("Dagger", 5);
+		FinalWeapon dagger = new Dagger(0.1f);
 		_player2 = new Character("Ana", 90, dagger);
 	}
 
@@ -34,7 +34,7 @@ public class PlayerCombat : MonoBehaviour
 		}
 		else if (Input.GetKeyDown(KeyCode.Alpha4))
 		{
-			_player1.EquipWeapon(new FinalWeapon("Weapon", Random.Range(5, 10)));
+			_player1.EquipWeapon(GetRandomWeapon());
 		}
 
 		if (Input.GetKeyDown(KeyCode.Q))
@@ -51,7 +51,22 @@ public class PlayerCombat : MonoBehaviour
 		}
 		else if (Input.GetKeyDown(KeyCode.R))
 		{
-			_player2.EquipWeapon(new FinalWeapon("Weapon", Random.Range(5, 10)));
+			_player2.EquipWeapon(GetRandomWeapon());
+		}
+	}
+
+	private FinalWeapon GetRandomWeapon()
+	{
+		var randomWeapon = Random.Range(0, 2);
+
+		switch (randomWeapon)
+		{
+			default:
+			case 0:
+				return new Sword();
+
+			case 1:
+				return new Dagger(0.1f);
 		}
 	}
 }

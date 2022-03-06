@@ -22,3 +22,18 @@ public class Program : MonoBehaviour
 		}
 	}
 }
+
+public abstract class ClassA
+{
+	public void Method1() { }
+
+	public abstract void Method2();
+}
+
+public class ClassB : ClassA
+{
+	public override void Method2()
+	{
+		Debug.Log("Method2");
+	}
+}

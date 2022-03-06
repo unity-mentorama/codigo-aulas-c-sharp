@@ -38,7 +38,7 @@ public class Character
 		else
 		{
 			Debug.Log($"{Name} attacked {other.Name} with their {Weapon.Name}.");
-			other.DealDamage(Weapon.Damage);
+			other.DealDamage(Weapon.Swing());
 		}
 	}
 

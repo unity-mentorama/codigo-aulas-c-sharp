@@ -11,8 +11,8 @@ public partial class PatrolComponent : MonoBehaviour
 		PatrollingRight
 	}
 
-	public Action OnStoppedMoving;
-	public Action<bool> OnStartedMoving;
+	public event Action OnStoppedMoving;
+	public event Action<bool> OnStartedMoving;
 
 	private PatrolData _patrolData;
 
@@ -54,17 +54,6 @@ public partial class PatrolComponent : MonoBehaviour
 	private void Update()
 	{
 		if (!_patrolling) return;
-
-		//if (_patrolState == PatrolState.Idle) return;
-
-		//_patrolTimer += Time.deltaTime;
-
-		//if (_patrolTimer > _patrolData.patrolDuration)
-		//{
-		//	_patrolState = PatrolState.Idle;
-		//	OnPatrolEnded?.Invoke();
-		//	return;
-		//}
 
 		switch (_patrolState)
 		{

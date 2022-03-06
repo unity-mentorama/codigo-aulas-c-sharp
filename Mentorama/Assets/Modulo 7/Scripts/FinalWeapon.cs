@@ -1,10 +1,10 @@
 using UnityEngine;
 
-public class FinalWeapon
+public abstract class FinalWeapon
 {
 	public string Name { get; private set; }
 	public char Rank { get; private set; }
-	public int Damage { get; private set; }
+	public int Damage { get; protected set; }
 
 	public FinalWeapon(string name, int damage)
 	{
@@ -13,7 +13,7 @@ public class FinalWeapon
 		Rank = Weapon.GetRank(damage);
 	}
 
-	public void Sharpen()
+	public virtual void Sharpen()
 	{
 		Damage++;
 		Debug.Log($"{Name} sharpened! Damage increased to {Damage}.");
@@ -26,4 +26,6 @@ public class FinalWeapon
 			Debug.Log($"{Name}'s rank increased to {Rank}!");
 		}
 	}
+
+	public abstract int Swing();
 }

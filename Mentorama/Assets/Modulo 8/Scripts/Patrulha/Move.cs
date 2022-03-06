@@ -6,13 +6,14 @@ public class Move : MonoBehaviour
 
 	public Vector3 Direction;
 
-	private void Update()
+	private void FixedUpdate()
 	{
-		Translate(Direction * Speed * Time.deltaTime);
+		Translate(Direction * Speed * Time.fixedDeltaTime);
 	}
 
 	void Translate(Vector3 movementTranslation)
 	{
 		transform.position = transform.position + movementTranslation;
+		//GetComponent<Rigidbody>().MovePosition(transform.position + movementTranslation);
 	}
 }
