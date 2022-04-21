@@ -17,8 +17,7 @@ public class PlayerCombat : MonoBehaviour
 		_player2 = new Character("Ana", 90, dagger);
 	}
 
-	// Update is called once per frame
-	void Update()
+	private void Update()
 	{
 		if (Input.GetKeyDown(KeyCode.Alpha1))
 		{

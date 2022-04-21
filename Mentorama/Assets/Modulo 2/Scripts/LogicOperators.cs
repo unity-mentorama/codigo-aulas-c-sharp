@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class LogicOperators : MonoBehaviour
 {
-	// Start is called before the first frame update
 	void Start()
 	{
 		bool test = !true;

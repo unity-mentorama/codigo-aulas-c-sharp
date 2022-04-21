@@ -48,7 +48,6 @@ public class ForeachLoops : MonoBehaviour
 		}
 
 		// Criando uma cópia da lista
-
 		List<string> auxList = new List<string>(list);
 		foreach (string item in auxList)
 		{
@@ -59,7 +58,6 @@ public class ForeachLoops : MonoBehaviour
 		}
 
 		// Usando for
-
 		for (int i = 0; i < list.Count; i++)
 		{
 			if (list[i][0] == letter)
@@ -70,7 +68,6 @@ public class ForeachLoops : MonoBehaviour
 		}
 
 		// De trás para frente
-
 		for (int i = list.Count - 1; i >= 0; i--)
 		{
 			if (list[i][0] == letter)

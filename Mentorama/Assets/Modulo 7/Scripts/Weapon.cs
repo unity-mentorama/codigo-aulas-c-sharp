@@ -47,7 +47,6 @@ class Weapon
 			return 'B';
 		}
 
-
 		return 'C';
 	}
 }

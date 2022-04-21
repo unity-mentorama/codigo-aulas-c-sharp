@@ -12,7 +12,6 @@ public class Enums : MonoBehaviour
 	[SerializeField]
 	GameState gameState;
 
-	// Start is called before the first frame update
 	void Start()
 	{
 		gameState = GameState.GameOver;

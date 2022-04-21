@@ -7,7 +7,6 @@ public class CodingStandards : MonoBehaviour
 	int snake_case;
 	//int kebab-case;
 
-	// Start is called before the first frame update
 	void Start()
 	{
 		int a = 0;

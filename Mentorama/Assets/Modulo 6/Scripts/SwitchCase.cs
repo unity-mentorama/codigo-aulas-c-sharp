@@ -12,7 +12,6 @@ public class SwitchCase : MonoBehaviour
 	[SerializeField]
 	GameState gameState;
 
-	// Start is called before the first frame update
 	void Start()
 	{
 		int value = 0;

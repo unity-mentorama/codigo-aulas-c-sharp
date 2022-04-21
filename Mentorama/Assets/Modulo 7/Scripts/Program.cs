@@ -12,7 +12,6 @@ public class Program : MonoBehaviour
 		Weapon.Sharpen(newWeapon);
 	}
 
-	// Update is called once per frame
 	void Update()
 	{
 		if (Input.GetKeyDown(KeyCode.Space))

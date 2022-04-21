@@ -45,24 +45,18 @@ public class InstantiateAndDeleteCubes : MonoBehaviour
 				Destroy(_allCubes[i]);
 			}
 
-
-
 			// Deletar o último da lista
-
 			Destroy(_allCubes[_allCubes.Count - 1]);
 			_allCubes.RemoveAt(_allCubes.Count - 1);
 
 
 			// Deletar o primeiro da lista
-
 			Destroy(_allCubes[0]);
 			_allCubes.RemoveAt(0);
 
 			// Tarefa - Deletar todos com maior altura
-
 			List<GameObject> highestCubes = new List<GameObject>();
 			float highestHeight = 0f;
-
 
 			for (int i = 0; i < _allCubes.Count; i++)
 			{

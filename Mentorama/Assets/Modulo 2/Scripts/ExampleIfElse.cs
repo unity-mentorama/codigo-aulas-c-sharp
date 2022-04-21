@@ -8,7 +8,6 @@ public class ExampleIfElse : MonoBehaviour
 	[SerializeField]
 	float n2;
 
-	// Start is called before the first frame update
 	void Start()
 	{
 		float m = (n1 + n2) / 2f;

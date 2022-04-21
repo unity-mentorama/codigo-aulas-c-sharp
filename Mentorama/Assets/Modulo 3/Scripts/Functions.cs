@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class Functions : MonoBehaviour
 {
-	// Start is called before the first frame update
 	void Start()
 	{
 		int a = 3;

@@ -36,7 +36,6 @@ public class ForLoop : MonoBehaviour
 		//FizzBuzz2();
 	}
 
-
 	int Factorial(int number)
 	{
 		int result = number;
@@ -102,7 +101,6 @@ public class ForLoop : MonoBehaviour
 				output = i.ToString();
 			}
 			Debug.Log(output);
-
 		}
 	}
 }

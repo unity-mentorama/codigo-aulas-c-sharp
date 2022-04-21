@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class BreakContinue : MonoBehaviour
 {
-	// Start is called before the first frame update
 	void Start()
 	{
 		Break();

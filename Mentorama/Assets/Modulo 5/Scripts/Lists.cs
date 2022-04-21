@@ -23,8 +23,6 @@ public class Lists : MonoBehaviour
 		intList.Clear();
 		PrintList(intList);
 
-
-
 		List<List<int>> intMatrix = new List<List<int>>();
 
 		intMatrix[0][0] = 1;

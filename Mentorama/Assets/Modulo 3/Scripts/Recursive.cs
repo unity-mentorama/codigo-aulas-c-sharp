@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class Recursive : MonoBehaviour
 {
-	// Start is called before the first frame update
 	void Start()
 	{
 		int fact = RecursiveFactorial(4);

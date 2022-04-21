@@ -8,7 +8,6 @@ public class SimpleMove : MonoBehaviour
 	[SerializeField]
 	bool shouldMoveY;
 
-	// Update is called once per frame
 	void Update()
 	{
 		if (shouldMoveX)

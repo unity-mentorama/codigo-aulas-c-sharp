@@ -5,7 +5,6 @@ public class WhileLoop : MonoBehaviour
 	[SerializeField]
 	int _input;
 
-	// Start is called before the first frame update
 	void Start()
 	{
 		// Estrutura do while
