@@ -1,10 +1,13 @@
 using UnityEngine;
 
-public class HelloWorld : MonoBehaviour
+namespace Modulo1
 {
-	void Start()
+	public class HelloWorld : MonoBehaviour
 	{
-		Debug.Log("Hello World!");
-		//Debug.Log("Hello World!");Debug.Log("Hello World!");
+		void Start()
+		{
+			Debug.Log("Hello World!");
+			//Debug.Log("Hello World!");Debug.Log("Hello World!");
+		}
 	}
 }

@@ -1,9 +1,12 @@
 ﻿using System;
 
-[Serializable]
-public struct PatrolData
+namespace Modulo8
 {
-	public float moveSpeed;
-	public float moveDuration;
-	public float idleDuration;
+	[Serializable]
+	public struct PatrolData
+	{
+		public float moveSpeed;
+		public float moveDuration;
+		public float idleDuration;
+	}
 }

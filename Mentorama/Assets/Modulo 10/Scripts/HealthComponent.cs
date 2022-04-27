@@ -1,27 +1,30 @@
 using UnityEngine;
 
-public class HealthComponent : MonoBehaviour
+namespace Modulo10
 {
-	public int MaxHealth { get; set; }
-
-	public int CurrentHealth { get; set; }
-
-	// Construtores não são utilizados.
-	public HealthComponent(int max, int current)
+	public class HealthComponent : MonoBehaviour
 	{
-		MaxHealth = max;
-		CurrentHealth = current;
-	}
+		public int MaxHealth { get; set; }
 
-	public void Initialize(int max, int current)
-	{
-		MaxHealth = max;
-		CurrentHealth = current;
-	}
+		public int CurrentHealth { get; set; }
 
-	private void Update()
-	{
-		// enabled
-		Debug.Log($"{name}: {CurrentHealth}/{MaxHealth}");
+		// Construtores não são utilizados.
+		public HealthComponent(int max, int current)
+		{
+			MaxHealth = max;
+			CurrentHealth = current;
+		}
+
+		public void Initialize(int max, int current)
+		{
+			MaxHealth = max;
+			CurrentHealth = current;
+		}
+
+		private void Update()
+		{
+			// enabled
+			Debug.Log($"{name}: {CurrentHealth}/{MaxHealth}");
+		}
 	}
 }

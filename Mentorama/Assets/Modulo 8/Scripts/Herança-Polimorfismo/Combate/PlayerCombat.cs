@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Modulo7
+namespace Modulo8
 {
 	public class PlayerCombat : MonoBehaviour
 	{
@@ -9,10 +9,10 @@ namespace Modulo7
 
 		void Start()
 		{
-			FinalWeapon sword = new FinalWeapon("Sword", 8);
+			Weapon sword = new Sword();
 			_player1 = new Character("Lex", 100, sword);
 
-			FinalWeapon dagger = new FinalWeapon("Dagger", 6);
+			Weapon dagger = new Dagger(0.1f);
 			_player2 = new Character("Ana", 90, dagger);
 		}
 
@@ -53,7 +53,7 @@ namespace Modulo7
 			}
 		}
 
-		private FinalWeapon GetRandomWeapon()
+		private Weapon GetRandomWeapon()
 		{
 			var randomWeapon = Random.Range(0, 2);
 
@@ -61,10 +61,10 @@ namespace Modulo7
 			{
 				default:
 				case 0:
-					return new FinalWeapon("Sword", 8);
+					return new Sword();
 
 				case 1:
-					return new FinalWeapon("Dagger", 6);
+					return new Dagger(0.1f);
 			}
 		}
 	}

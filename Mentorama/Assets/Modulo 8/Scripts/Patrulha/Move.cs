@@ -1,19 +1,22 @@
 using UnityEngine;
 
-public class Move : MonoBehaviour
+namespace Modulo8
 {
-	public float Speed;
-
-	public Vector3 Direction;
-
-	private void FixedUpdate()
+	public class Move : MonoBehaviour
 	{
-		Translate(Direction * Speed * Time.fixedDeltaTime);
-	}
+		public float Speed;
 
-	void Translate(Vector3 movementTranslation)
-	{
-		transform.position = transform.position + movementTranslation;
-		//GetComponent<Rigidbody>().MovePosition(transform.position + movementTranslation);
+		public Vector3 Direction;
+
+		private void FixedUpdate()
+		{
+			Translate(Direction * Speed * Time.fixedDeltaTime);
+		}
+
+		void Translate(Vector3 movementTranslation)
+		{
+			transform.position = transform.position + movementTranslation;
+			//GetComponent<Rigidbody>().MovePosition(transform.position + movementTranslation);
+		}
 	}
 }

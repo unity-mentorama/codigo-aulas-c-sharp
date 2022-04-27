@@ -1,88 +1,91 @@
 using UnityEngine;
 
-public class Functions : MonoBehaviour
+namespace Modulo3
 {
-	void Start()
+	public class Functions : MonoBehaviour
 	{
-		int a = 3;
-		int b = 2;
-		int c = 5;
-		int sum = a + b + c;
-
-		sum = Sum(a, b, c);
-
-		Debug.Log(InBetween(3, 4, 5));
-
-
-		float m = CalculateGrade(3, 4);
-
-		if (m > 5)
+		void Start()
 		{
-			Debug.Log("Aprovado");
-		}
-		else
-		{
-			Debug.Log("Reprovado");
-		}
-	}
+			int a = 3;
+			int b = 2;
+			int c = 5;
+			int sum = a + b + c;
 
-	int Sum(int a, int b, int c)
-	{
-		return a + b + c;
-	}
+			sum = Sum(a, b, c);
 
-	void PrintHi()
-	{
-		Debug.Log("Hi!");
-	}
+			Debug.Log(InBetween(3, 4, 5));
 
-	void PrintVariable(int value)
-	{
-		Debug.Log($"Variable: {value}");
-	}
 
-	bool IsGreaterThan(int a, int b)
-	{
-		if (a > b)
-		{
-			Debug.Log($"{a} is greated than {b}");
-		}
-		else
-		{
-			Debug.Log($"{a} is not greated than {b}");
+			float m = CalculateGrade(3, 4);
+
+			if (m > 5)
+			{
+				Debug.Log("Aprovado");
+			}
+			else
+			{
+				Debug.Log("Reprovado");
+			}
 		}
 
-		return a > b;
-	}
-
-	float CalculateGrade(float n1, float n2)
-	{
-		return (n1 + n2) / 2f;
-	}
-
-	int GetGreatest(int a, int b)
-	{
-		//if (IsGreaterThan(a, b))
-		if (a > b)
+		int Sum(int a, int b, int c)
 		{
-			return a;
-		}
-		else
-		{
-			return b;
-		}
-	}
-
-	bool InBetween(int value, int min, int max)
-	{
-		if (IsGreaterThan(value, min) && IsGreaterThan(max, value))
-		//if ((value > min) && (value < max))
-		{
-			return true;
+			return a + b + c;
 		}
 
-		return false;
+		void PrintHi()
+		{
+			Debug.Log("Hi!");
+		}
 
-		//return (value < min) && (value > max);
+		void PrintVariable(int value)
+		{
+			Debug.Log($"Variable: {value}");
+		}
+
+		bool IsGreaterThan(int a, int b)
+		{
+			if (a > b)
+			{
+				Debug.Log($"{a} is greated than {b}");
+			}
+			else
+			{
+				Debug.Log($"{a} is not greated than {b}");
+			}
+
+			return a > b;
+		}
+
+		float CalculateGrade(float n1, float n2)
+		{
+			return (n1 + n2) / 2f;
+		}
+
+		int GetGreatest(int a, int b)
+		{
+			//if (IsGreaterThan(a, b))
+			if (a > b)
+			{
+				return a;
+			}
+			else
+			{
+				return b;
+			}
+		}
+
+		bool InBetween(int value, int min, int max)
+		{
+			if (IsGreaterThan(value, min) && IsGreaterThan(max, value))
+			//if ((value > min) && (value < max))
+			{
+				return true;
+			}
+
+			return false;
+
+			//return (value < min) && (value > max);
+		}
 	}
 }

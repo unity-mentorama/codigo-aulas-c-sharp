@@ -1,85 +1,88 @@
 using UnityEngine;
 
-public class WhileLoop : MonoBehaviour
+namespace Modulo4
 {
-	[SerializeField]
-	int _input;
-
-	void Start()
+	public class WhileLoop : MonoBehaviour
 	{
-		// Estrutura do while
-		//while (true)
-		//{
-		//	//
-		//}
+		[SerializeField]
+		int _input;
 
-		int i = 5;
-		while (i >= 0)
+		void Start()
 		{
-			i--;
-			Debug.Log(i);
+			// Estrutura do while
+			//while (true)
+			//{
+			//	//
+			//}
+
+			int i = 5;
+			while (i >= 0)
+			{
+				i--;
+				Debug.Log(i);
+			}
+
+
+			//// Voltar para slides e explicar estrutura do do-while
+			//do
+			//{
+			//	//
+			//}
+			//while (true);
+
+			i = 0;
+			do
+			{
+				//Debug.Log(i);
+				i++;
+			}
+			while (i < 10);
+
+			Debug.Log(DoWhileFactorial2(_input));
 		}
 
-
-		//// Voltar para slides e explicar estrutura do do-while
-		//do
-		//{
-		//	//
-		//}
-		//while (true);
-
-		i = 0;
-		do
+		int Factorial(int number)
 		{
-			//Debug.Log(i);
-			i++;
-		}
-		while (i < 10);
+			int result = number;
 
-		Debug.Log(DoWhileFactorial2(_input));
-	}
+			while (number > 1)
+			{
+				number--;
+				result *= number;
+			}
 
-	int Factorial(int number)
-	{
-		int result = number;
-
-		while (number > 1)
-		{
-			number--;
-			result *= number;
+			return result;
 		}
 
-		return result;
-	}
-
-	// number = 1 -> erro
-	int DoWhileFactorial(int number)
-	{
-		int result = number;
-
-		do
+		// number = 1 -> erro
+		int DoWhileFactorial(int number)
 		{
-			number--;
-			result *= number;
+			int result = number;
+
+			do
+			{
+				number--;
+				result *= number;
+			}
+			while (number > 1);
+
+			return result;
 		}
-		while (number > 1);
 
-		return result;
-	}
-
-	// Corrigir fazendo crescente
-	int DoWhileFactorial2(int number)
-	{
-		int result = 1;
-		int iterator = 0;
-
-		do
+		// Corrigir fazendo crescente
+		int DoWhileFactorial2(int number)
 		{
-			iterator++;
-			result *= iterator;
-		}
-		while (iterator < number);
+			int result = 1;
+			int iterator = 0;
 
-		return result;
+			do
+			{
+				iterator++;
+				result *= iterator;
+			}
+			while (iterator < number);
+
+			return result;
+		}
 	}
 }

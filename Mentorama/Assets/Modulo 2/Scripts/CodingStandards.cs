@@ -1,33 +1,36 @@
 using UnityEngine;
 
-public class CodingStandards : MonoBehaviour
+namespace Modulo2
 {
-	int camelCase;
-	int PascalCase;
-	int snake_case;
-	//int kebab-case;
-
-	void Start()
+	public class CodingStandards : MonoBehaviour
 	{
-		int a = 0;
+		int camelCase;
+		int PascalCase;
+		int snake_case;
+		//int kebab-case;
 
-		if (a == 0)
+		void Start()
 		{
-			a++;
+			int a = 0;
+
+			if (a == 0)
+			{
+				a++;
+				Debug.Log(a);
+			}
+			else
+			{
+				a--;
+				Debug.Log(a);
+			}
+
+			Debug.Log(a);
+
+			if (a == 0) a++;
+
+			if (a == 0)
+				a++;
 			Debug.Log(a);
 		}
-		else
-		{
-			a--;
-			Debug.Log(a);
-		}
-
-		Debug.Log(a);
-
-		if (a == 0) a++;
-
-		if (a == 0)
-			a++;
-		Debug.Log(a);
 	}
 }

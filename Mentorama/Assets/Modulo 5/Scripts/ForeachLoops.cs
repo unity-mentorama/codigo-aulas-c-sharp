@@ -1,78 +1,81 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ForeachLoops : MonoBehaviour
+namespace Modulo5
 {
-	List<string> names = new List<string>(new string[] { "Lex", "Jorge", "Lucas", "Laura", "Jones", "Camila" });
-
-	int[] values = new int[] { 4, 5, 6, 7, 8 };
-
-	void Start()
+	public class ForeachLoops : MonoBehaviour
 	{
-		PrintList(names);
-		Debug.Log("============");
-		RemoveNamesStartingWithLetter(names, 'L');
-		PrintList(names); // ctrl + shift + space
-		PrintList(values);
-	}
+		List<string> names = new List<string>(new string[] { "Lex", "Jorge", "Lucas", "Laura", "Jones", "Camila" });
 
-	// Sobrecarga de métodos
-	void PrintList(List<string> list)
-	{
-		foreach (string item in list)
+		int[] values = new int[] { 4, 5, 6, 7, 8 };
+
+		void Start()
 		{
-			Debug.Log(item);
+			PrintList(names);
+			Debug.Log("============");
+			RemoveNamesStartingWithLetter(names, 'L');
+			PrintList(names); // ctrl + shift + space
+			PrintList(values);
 		}
-	}
 
-	void PrintList(int[] array)
-	{
-		foreach (int item in array)
+		// Sobrecarga de métodos
+		void PrintList(List<string> list)
 		{
-			Debug.Log(item);
-		}
-	}
-
-	// Explicando que não pode remover itens durante um foreach
-	void RemoveNamesStartingWithLetter(List<string> list, char letter)
-	{
-		// Não funciona, não é permitido modificar
-
-		foreach (string item in list)
-		{
-			if (item[0] == letter)
+			foreach (string item in list)
 			{
-				list.Add("Luara"); // Nem adicionar
-				list.Remove(item); // Nem remover
+				Debug.Log(item);
 			}
 		}
 
-		// Criando uma cópia da lista
-		List<string> auxList = new List<string>(list);
-		foreach (string item in auxList)
+		void PrintList(int[] array)
 		{
-			if (item[0] == letter)
+			foreach (int item in array)
 			{
-				list.Remove(item);
+				Debug.Log(item);
 			}
 		}
 
-		// Usando for
-		for (int i = 0; i < list.Count; i++)
+		// Explicando que não pode remover itens durante um foreach
+		void RemoveNamesStartingWithLetter(List<string> list, char letter)
 		{
-			if (list[i][0] == letter)
-			{
-				list.Remove(list[i]);
-				i--; // Sem isso fica errado
-			}
-		}
+			// Não funciona, não é permitido modificar
 
-		// De trás para frente
-		for (int i = list.Count - 1; i >= 0; i--)
-		{
-			if (list[i][0] == letter)
+			foreach (string item in list)
 			{
-				list.Remove(list[i]);
+				if (item[0] == letter)
+				{
+					list.Add("Luara"); // Nem adicionar
+					list.Remove(item); // Nem remover
+				}
+			}
+
+			// Criando uma cópia da lista
+			List<string> auxList = new List<string>(list);
+			foreach (string item in auxList)
+			{
+				if (item[0] == letter)
+				{
+					list.Remove(item);
+				}
+			}
+
+			// Usando for
+			for (int i = 0; i < list.Count; i++)
+			{
+				if (list[i][0] == letter)
+				{
+					list.Remove(list[i]);
+					i--; // Sem isso fica errado
+				}
+			}
+
+			// De trás para frente
+			for (int i = list.Count - 1; i >= 0; i--)
+			{
+				if (list[i][0] == letter)
+				{
+					list.Remove(list[i]);
+				}
 			}
 		}
 	}

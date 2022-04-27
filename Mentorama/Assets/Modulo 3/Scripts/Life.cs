@@ -1,20 +1,23 @@
 using UnityEngine;
 
-public class Life : MonoBehaviour
+namespace Modulo3
 {
-	[SerializeField]
-	int life = 5;
-
-	void Update()
+	public class Life : MonoBehaviour
 	{
-		if (Input.GetKeyDown(KeyCode.Alpha1))
+		[SerializeField]
+		int life = 5;
+
+		void Update()
 		{
-			AddLife(1);
+			if (Input.GetKeyDown(KeyCode.Alpha1))
+			{
+				AddLife(1);
+			}
 		}
-	}
 
-	void AddLife(int value)
-	{
-		life += value;
+		void AddLife(int value)
+		{
+			life += value;
+		}
 	}
 }

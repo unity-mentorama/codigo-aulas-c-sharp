@@ -1,30 +1,33 @@
 using UnityEngine;
 
-public class Enums : MonoBehaviour
+namespace Modulo6
 {
-	enum GameState
+	public class Enums : MonoBehaviour
 	{
-		Starting = 0,   // 0
-		InGame = 1,     // 1
-		GameOver = 2    // 2
-	}
-
-	[SerializeField]
-	GameState gameState;
-
-	void Start()
-	{
-		gameState = GameState.GameOver;
-
-		Debug.Log($"gameState: {((int)gameState)}");
-
-		if (gameState == GameState.InGame)
+		enum GameState
 		{
-			//
+			Starting = 0,   // 0
+			InGame = 1,     // 1
+			GameOver = 2    // 2
 		}
-		else if (gameState == GameState.GameOver)
+
+		[SerializeField]
+		GameState gameState;
+
+		void Start()
 		{
-			//
+			gameState = GameState.GameOver;
+
+			Debug.Log($"gameState: {((int)gameState)}");
+
+			if (gameState == GameState.InGame)
+			{
+				//
+			}
+			else if (gameState == GameState.GameOver)
+			{
+				//
+			}
 		}
 	}
 }

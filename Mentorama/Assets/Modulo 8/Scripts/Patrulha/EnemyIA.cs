@@ -1,62 +1,65 @@
 using UnityEngine;
 
-public class EnemyIA : MonoBehaviour
+namespace Modulo8
 {
-	private enum EnemyState
+	public class EnemyIA : MonoBehaviour
 	{
-		Stopped,
-		PatrollingRoute1,
-		PatrollingRoute2
-	}
-
-	public PatrolComponent PatrolComponent;
-
-	[SerializeField]
-	private PatrolData _patrolData1;
-
-	[SerializeField]
-	private PatrolData _patrolData2;
-
-	private EnemyState currentState;
-
-	private void Start()
-	{
-		currentState = EnemyState.Stopped;
-	}
-
-	private void Update()
-	{
-		switch (currentState)
+		private enum EnemyState
 		{
-			default:
-			case EnemyState.Stopped:
+			Stopped,
+			PatrollingRoute1,
+			PatrollingRoute2
+		}
 
-				if (Input.GetKeyDown(KeyCode.Alpha1))
-				{
-					PatrolComponent.StartPatrol(_patrolData1);
+		public PatrolComponent PatrolComponent;
 
-					currentState = EnemyState.PatrollingRoute1;
-				}
-				else if (Input.GetKeyDown(KeyCode.Alpha2))
-				{
-					PatrolComponent.StartPatrol(_patrolData2);
+		[SerializeField]
+		private PatrolData _patrolData1;
 
-					currentState = EnemyState.PatrollingRoute2;
-				}
+		[SerializeField]
+		private PatrolData _patrolData2;
 
-				break;
+		private EnemyState currentState;
 
-			case EnemyState.PatrollingRoute1:
-			case EnemyState.PatrollingRoute2:
+		private void Start()
+		{
+			currentState = EnemyState.Stopped;
+		}
 
-				if (Input.GetKeyDown(KeyCode.Space))
-				{
-					PatrolComponent.StopPatrol();
+		private void Update()
+		{
+			switch (currentState)
+			{
+				default:
+				case EnemyState.Stopped:
 
-					currentState = EnemyState.Stopped;
-				}
+					if (Input.GetKeyDown(KeyCode.Alpha1))
+					{
+						PatrolComponent.StartPatrol(_patrolData1);
 
-				break;
+						currentState = EnemyState.PatrollingRoute1;
+					}
+					else if (Input.GetKeyDown(KeyCode.Alpha2))
+					{
+						PatrolComponent.StartPatrol(_patrolData2);
+
+						currentState = EnemyState.PatrollingRoute2;
+					}
+
+					break;
+
+				case EnemyState.PatrollingRoute1:
+				case EnemyState.PatrollingRoute2:
+
+					if (Input.GetKeyDown(KeyCode.Space))
+					{
+						PatrolComponent.StopPatrol();
+
+						currentState = EnemyState.Stopped;
+					}
+
+					break;
+			}
 		}
 	}
 }

@@ -1,89 +1,92 @@
 using UnityEngine;
 
-public class BreakContinue : MonoBehaviour
+namespace Modulo4
 {
-	void Start()
+	public class BreakContinue : MonoBehaviour
 	{
-		Break();
-		Continue();
-	}
-
-	void Break()
-	{
-		for (int i = 0; i < 10;)// i++)
+		void Start()
 		{
-			Debug.Log($"Before 'break': {i}");
-			break;
-			//Debug.Log($"After 'break': {i}");
+			Break();
+			Continue();
 		}
-	}
 
-	void Continue()
-	{
-		for (int i = 0; i < 10; i++)
+		void Break()
 		{
-			Debug.Log($"Before 'continue': {i}");
-			continue;
-			//Debug.Log($"After 'continue': {i}");
-		}
-	}
-
-	// Exemplo prático break
-	int FindFirstDivisibleNumber(int number)
-	{
-		int result = 2;
-		while (result <= number)
-		{
-			if (number % result == 0)
+			for (int i = 0; i < 10;)// i++)
 			{
-				break; // Pode colocar return aqui tmb
+				Debug.Log($"Before 'break': {i}");
+				break;
+				//Debug.Log($"After 'break': {i}");
 			}
-			result++;
 		}
-		return result;
-	}
 
-	// Exemplo prático continue (não precisa)
-	int FindFirstOddDivisibleNumber(int number)
-	{
-		int result = 3;
-		while (result <= number)
+		void Continue()
 		{
-			if (number % 2 == 0)
+			for (int i = 0; i < 10; i++)
 			{
-				result++;
+				Debug.Log($"Before 'continue': {i}");
 				continue;
+				//Debug.Log($"After 'continue': {i}");
 			}
-
-			if (number % result == 0)
-			{
-				break; // Return funcionaria também
-			}
-
-			result++;
 		}
-		return result;
-	}
 
-	// Exemplo prático for + continue
-	void PrintPrimeNumbersUntil(int number)
-	{
-		for (int i = 2; i <= number; i++)
+		// Exemplo prático break
+		int FindFirstDivisibleNumber(int number)
 		{
-			bool isPrimeNumber = true;
-
-			for (int n = i / 2; n >= 2; n--)
+			int result = 2;
+			while (result <= number)
 			{
-				if (i % n == 0)
+				if (number % result == 0)
 				{
-					isPrimeNumber = false;
+					break; // Pode colocar return aqui tmb
+				}
+				result++;
+			}
+			return result;
+		}
+
+		// Exemplo prático continue (não precisa)
+		int FindFirstOddDivisibleNumber(int number)
+		{
+			int result = 3;
+			while (result <= number)
+			{
+				if (number % 2 == 0)
+				{
+					result++;
 					continue;
 				}
-			}
 
-			if (isPrimeNumber)
+				if (number % result == 0)
+				{
+					break; // Return funcionaria também
+				}
+
+				result++;
+			}
+			return result;
+		}
+
+		// Exemplo prático for + continue
+		void PrintPrimeNumbersUntil(int number)
+		{
+			for (int i = 2; i <= number; i++)
 			{
-				Debug.Log(i);
+				bool isPrimeNumber = true;
+
+				for (int n = i / 2; n >= 2; n--)
+				{
+					if (i % n == 0)
+					{
+						isPrimeNumber = false;
+						continue;
+					}
+				}
+
+				if (isPrimeNumber)
+				{
+					Debug.Log(i);
+				}
 			}
 		}
 	}

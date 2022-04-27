@@ -1,82 +1,85 @@
 using UnityEngine;
 
-public class SwitchCase : MonoBehaviour
+namespace Modulo6
 {
-	enum GameState
+	public class SwitchCase : MonoBehaviour
 	{
-		Starting = 0,   // 0
-		InGame = 1,     // 1
-		GameOver = 2    // 2
-	}
-
-	[SerializeField]
-	GameState gameState;
-
-	void Start()
-	{
-		int value = 0;
-
-		switch (value)
+		enum GameState
 		{
-			case 0:
-				break;
-
-			case 1:
-				break;
-
-			case 2:
-				break;
+			Starting = 0,   // 0
+			InGame = 1,     // 1
+			GameOver = 2    // 2
 		}
 
-		string myString = "Hello World";
+		[SerializeField]
+		GameState gameState;
 
-		switch (myString)
+		void Start()
 		{
-			case "Hello":
-				Debug.Log(1);
-				break;
+			int value = 0;
 
-			case "World":
-				Debug.Log(2);
-				break;
+			switch (value)
+			{
+				case 0:
+					break;
 
-			case "Hello World":
-				Debug.Log(3);
-				break;
-		}
+				case 1:
+					break;
 
-		gameState = GameState.GameOver;
+				case 2:
+					break;
+			}
 
-		switch (gameState)
-		{
-			case GameState.Starting:
-				break;
+			string myString = "Hello World";
 
-			case GameState.InGame:
-				break;
+			switch (myString)
+			{
+				case "Hello":
+					Debug.Log(1);
+					break;
 
-			case GameState.GameOver:
-				break;
-		}
+				case "World":
+					Debug.Log(2);
+					break;
 
-		switch (gameState)
-		{
-			case GameState.Starting:
-			case GameState.InGame:
-				Debug.Log("InGame");
-				break;
+				case "Hello World":
+					Debug.Log(3);
+					break;
+			}
 
-			case GameState.GameOver:
-				break;
-		}
+			gameState = GameState.GameOver;
 
-		switch (gameState)
-		{
-			case GameState.Starting:
-				break;
+			switch (gameState)
+			{
+				case GameState.Starting:
+					break;
 
-			default:
-				break;
+				case GameState.InGame:
+					break;
+
+				case GameState.GameOver:
+					break;
+			}
+
+			switch (gameState)
+			{
+				case GameState.Starting:
+				case GameState.InGame:
+					Debug.Log("InGame");
+					break;
+
+				case GameState.GameOver:
+					break;
+			}
+
+			switch (gameState)
+			{
+				case GameState.Starting:
+					break;
+
+				default:
+					break;
+			}
 		}
 	}
 }

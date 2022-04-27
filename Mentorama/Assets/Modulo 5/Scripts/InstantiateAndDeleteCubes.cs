@@ -2,80 +2,83 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InstantiateAndDeleteCubes : MonoBehaviour
+namespace Modulo5
 {
-	[SerializeField]
-	GameObject _cubePrefab;
-
-	[SerializeField]
-	int mapSize;
-
-	List<GameObject> _allCubes = new List<GameObject>();
-
-	void Start()
+	public class InstantiateAndDeleteCubes : MonoBehaviour
 	{
-		for (int x = 0; x < mapSize; x++)
+		[SerializeField]
+		GameObject _cubePrefab;
+
+		[SerializeField]
+		int mapSize;
+
+		List<GameObject> _allCubes = new List<GameObject>();
+
+		void Start()
 		{
-			for (int z = 0; z < mapSize; z++)
+			for (int x = 0; x < mapSize; x++)
 			{
-				int edge = 0;
-				if (x == 0 || x == mapSize - 1 || z == 0 || z == mapSize - 1)
+				for (int z = 0; z < mapSize; z++)
 				{
-					edge = 2;
-				}
+					int edge = 0;
+					if (x == 0 || x == mapSize - 1 || z == 0 || z == mapSize - 1)
+					{
+						edge = 2;
+					}
 
-				int columnHeight = Random.Range(1, 3) + edge;
+					int columnHeight = Random.Range(1, 3) + edge;
 
-				for (int y = 0; y < columnHeight; y++)
-				{
-					_allCubes.Add(Instantiate(_cubePrefab, new Vector3(x, y, z), Quaternion.identity));
+					for (int y = 0; y < columnHeight; y++)
+					{
+						_allCubes.Add(Instantiate(_cubePrefab, new Vector3(x, y, z), Quaternion.identity));
+					}
 				}
 			}
 		}
-	}
 
-	private void Update()
-	{
-		if (Input.GetKeyDown(KeyCode.Space))
+		private void Update()
 		{
-			// Deletar todos
-
-			for (int i = 0; i < _allCubes.Count; i++)
+			if (Input.GetKeyDown(KeyCode.Space))
 			{
-				Destroy(_allCubes[i]);
-			}
+				// Deletar todos
 
-			// Deletar o último da lista
-			Destroy(_allCubes[_allCubes.Count - 1]);
-			_allCubes.RemoveAt(_allCubes.Count - 1);
-
-
-			// Deletar o primeiro da lista
-			Destroy(_allCubes[0]);
-			_allCubes.RemoveAt(0);
-
-			// Tarefa - Deletar todos com maior altura
-			List<GameObject> highestCubes = new List<GameObject>();
-			float highestHeight = 0f;
-
-			for (int i = 0; i < _allCubes.Count; i++)
-			{
-				if (_allCubes[i].transform.position.y > highestHeight)
+				for (int i = 0; i < _allCubes.Count; i++)
 				{
-					highestHeight = _allCubes[i].transform.position.y;
-					highestCubes.Clear();
+					Destroy(_allCubes[i]);
 				}
 
-				if (_allCubes[i].transform.position.y == highestHeight)
-				{
-					highestCubes.Add(_allCubes[i]);
-				}
-			}
+				// Deletar o último da lista
+				Destroy(_allCubes[_allCubes.Count - 1]);
+				_allCubes.RemoveAt(_allCubes.Count - 1);
 
-			for (int i = 0; i < highestCubes.Count; i++)
-			{
-				Destroy(highestCubes[i]);
-				_allCubes.Remove(highestCubes[i]);
+
+				// Deletar o primeiro da lista
+				Destroy(_allCubes[0]);
+				_allCubes.RemoveAt(0);
+
+				// Tarefa - Deletar todos com maior altura
+				List<GameObject> highestCubes = new List<GameObject>();
+				float highestHeight = 0f;
+
+				for (int i = 0; i < _allCubes.Count; i++)
+				{
+					if (_allCubes[i].transform.position.y > highestHeight)
+					{
+						highestHeight = _allCubes[i].transform.position.y;
+						highestCubes.Clear();
+					}
+
+					if (_allCubes[i].transform.position.y == highestHeight)
+					{
+						highestCubes.Add(_allCubes[i]);
+					}
+				}
+
+				for (int i = 0; i < highestCubes.Count; i++)
+				{
+					Destroy(highestCubes[i]);
+					_allCubes.Remove(highestCubes[i]);
+				}
 			}
 		}
 	}

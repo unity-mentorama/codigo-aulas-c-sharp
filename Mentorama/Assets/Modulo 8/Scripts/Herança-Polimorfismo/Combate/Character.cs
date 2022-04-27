@@ -1,12 +1,12 @@
 using UnityEngine;
 
-namespace Modulo7
+namespace Modulo8
 {
 	public class Character
 	{
 		public string Name { get; private set; }
 		public int Life { get; private set; }
-		public FinalWeapon Weapon { get; private set; }
+		public Weapon Weapon { get; private set; }
 
 		public bool IsAlive { get => Life > 0; }
 
@@ -16,7 +16,7 @@ namespace Modulo7
 		//	Life = life;
 		//}
 
-		public Character(string name, int life, FinalWeapon weapon = null)
+		public Character(string name, int life, Weapon weapon = null)
 		{
 			Name = name;
 			Life = life;
@@ -40,7 +40,7 @@ namespace Modulo7
 			else
 			{
 				Debug.Log($"{Name} attacked {other.Name} with their {Weapon.Name}.");
-				other.DealDamage(Weapon.Damage);
+				other.DealDamage(Weapon.Swing());
 			}
 		}
 
@@ -55,7 +55,7 @@ namespace Modulo7
 			Weapon.Sharpen();
 		}
 
-		public void EquipWeapon(FinalWeapon weapon)
+		public void EquipWeapon(Weapon weapon)
 		{
 			if (!CheckAlive()) return;
 

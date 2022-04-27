@@ -1,45 +1,48 @@
 using UnityEngine;
 
-public class IfElse : MonoBehaviour
+namespace Modulo2
 {
-	void Start()
+	public class IfElse : MonoBehaviour
 	{
-		if (true)
+		void Start()
 		{
-			Debug.Log("verdade");
-		}
-		else
-		{
-			//Debug.Log("falso");
-		}
+			if (true)
+			{
+				Debug.Log("verdade");
+			}
+			else
+			{
+				//Debug.Log("falso");
+			}
 
-		int a = 1;
-		int b = 2;
-		int c = 3;
-		int d = 4;
+			int a = 1;
+			int b = 2;
+			int c = 3;
+			int d = 4;
 
-		if ((a == b) && (c < d))
-		{
-			Debug.Log("true");
-		}
-		else
-		{
-			Debug.Log("false");
-		}
+			if ((a == b) && (c < d))
+			{
+				Debug.Log("true");
+			}
+			else
+			{
+				Debug.Log("false");
+			}
 
-		if (a < 5)
-		{
-			//
-		}
-		else if (a < 10)
-		{
-			//
-		}
-		else
-		{
-			//
-		}
+			if (a < 5)
+			{
+				//
+			}
+			else if (a < 10)
+			{
+				//
+			}
+			else
+			{
+				//
+			}
 
-		//if (a = 5)
+			//if (a = 5)
+		}
 	}
 }

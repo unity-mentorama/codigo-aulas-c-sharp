@@ -1,42 +1,45 @@
 using System;
 using UnityEngine;
 
-public class Structs : MonoBehaviour
+namespace Modulo6
 {
-	[Serializable]
-	struct PlayerData
+	public class Structs : MonoBehaviour
 	{
-		long Mana;
-		public byte Health;
-		public byte Score;
-	}
-
-	struct Coordinates
-	{
-		public float x;
-		public float y;
-		public float z;
-	}
-
-	[SerializeField]
-	PlayerData playerData;
-
-	[SerializeField]
-	PlayerData[] playersData;
-
-	void Start()
-	{
-		playerData.Health = 3;
-
-		playerData = new PlayerData
+		[Serializable]
+		struct PlayerData
 		{
-			Health = 3,
-			Score = 4
-		};
+			long Mana;
+			public byte Health;
+			public byte Score;
+		}
 
-		playerData = default;
+		struct Coordinates
+		{
+			public float x;
+			public float y;
+			public float z;
+		}
 
-		PlayerData newPlayerData = playerData;
-		newPlayerData.Health = 5;
+		[SerializeField]
+		PlayerData playerData;
+
+		[SerializeField]
+		PlayerData[] playersData;
+
+		void Start()
+		{
+			playerData.Health = 3;
+
+			playerData = new PlayerData
+			{
+				Health = 3,
+				Score = 4
+			};
+
+			playerData = default;
+
+			PlayerData newPlayerData = playerData;
+			newPlayerData.Health = 5;
+		}
 	}
 }

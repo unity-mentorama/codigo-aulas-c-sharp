@@ -1,14 +1,14 @@
 using UnityEngine;
 
-namespace Modulo7
+namespace Modulo8
 {
-	public class FinalWeapon
+	public abstract class Weapon
 	{
 		public string Name { get; private set; }
 		public char Rank { get; private set; }
 		public int Damage { get; protected set; }
 
-		public FinalWeapon(string name, int damage)
+		public Weapon(string name, int damage)
 		{
 			Name = name;
 			Damage = damage;
@@ -27,6 +27,26 @@ namespace Modulo7
 
 				Debug.Log($"{Name}'s rank increased to {Rank}!");
 			}
+		}
+
+		public abstract int Swing();
+
+		public static char GetRank(int damage)
+		{
+			if (damage >= 10)
+			{
+				return 'S';
+			}
+			else if (damage >= 7)
+			{
+				return 'A';
+			}
+			else if (damage >= 4)
+			{
+				return 'B';
+			}
+
+			return 'C';
 		}
 	}
 }

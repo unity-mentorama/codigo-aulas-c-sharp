@@ -1,24 +1,27 @@
 using UnityEngine;
 
-public class ExampleIfElse : MonoBehaviour
+namespace Modulo2
 {
-	[SerializeField]
-	float n1;
-
-	[SerializeField]
-	float n2;
-
-	void Start()
+	public class ExampleIfElse : MonoBehaviour
 	{
-		float m = (n1 + n2) / 2f;
+		[SerializeField]
+		float n1;
 
-		if (m > 5)
+		[SerializeField]
+		float n2;
+
+		void Start()
 		{
-			Debug.Log("Aprovado");
-		}
-		else
-		{
-			Debug.Log("Reprovado");
+			float m = (n1 + n2) / 2f;
+
+			if (m > 5)
+			{
+				Debug.Log("Aprovado");
+			}
+			else
+			{
+				Debug.Log("Reprovado");
+			}
 		}
 	}
 }

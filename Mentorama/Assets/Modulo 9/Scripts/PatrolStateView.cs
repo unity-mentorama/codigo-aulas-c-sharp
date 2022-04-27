@@ -1,27 +1,31 @@
+using Modulo8;
 using TMPro;
 using UnityEngine;
 
-[RequireComponent(typeof(TextMeshProUGUI))]
-public class PatrolStateView : MonoBehaviour
+namespace Modulo9
 {
-	public PatrolComponent PatrolComponent;
-	private TextMeshProUGUI _text;
-
-	private void Start()
+	[RequireComponent(typeof(TextMeshProUGUI))]
+	public class PatrolStateView : MonoBehaviour
 	{
-		_text = GetComponent<TextMeshProUGUI>();
-		_text.text = "Idle";
-		PatrolComponent.OnStartedMoving += StartedMovingHandler;
-		PatrolComponent.OnStoppedMoving += StoppedMovingHandler;
-	}
+		public PatrolComponent PatrolComponent;
+		private TextMeshProUGUI _text;
 
-	private void StartedMovingHandler(bool isRight)
-	{
-		_text.text = isRight ? "Right" : "Left";
-	}
+		private void Start()
+		{
+			_text = GetComponent<TextMeshProUGUI>();
+			_text.text = "Idle";
+			PatrolComponent.OnStartedMoving += StartedMovingHandler;
+			PatrolComponent.OnStoppedMoving += StoppedMovingHandler;
+		}
 
-	private void StoppedMovingHandler()
-	{
-		_text.text = "Idle";
+		private void StartedMovingHandler(bool isRight)
+		{
+			_text.text = isRight ? "Right" : "Left";
+		}
+
+		private void StoppedMovingHandler()
+		{
+			_text.text = "Idle";
+		}
 	}
 }

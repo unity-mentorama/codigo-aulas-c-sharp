@@ -589,15 +589,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3036e7a0a50791e4d86ea20fd60aa258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  patrolData1:
-    moveSpeed: 1
-    moveDuration: 4
-    idleDuration: 3
-  patrolData2:
-    moveSpeed: 2
-    moveDuration: 1
-    idleDuration: 2
   PatrolComponent: {fileID: 1953499578}
+  _patrolData1:
+    moveSpeed: 3
+    moveDuration: 2
+    idleDuration: 1
+  _patrolData2:
+    moveSpeed: 1
+    moveDuration: 2
+    idleDuration: 3
 --- !u!114 &1953499578
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -757,5 +757,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ea6125a0f152884c93de60f7910ca61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Text: {fileID: 2081073128}
   PatrolComponent: {fileID: 1953499578}
