@@ -6,6 +6,7 @@
 /[Bb]uilds/
 /[Uu]nity[Gg]enerated/
 /Assets/AssetStoreTools*
+/[Uu]serSettings/
 *.stackdump
 
 # Visual Studio 2015 cache directory
