@@ -14,6 +14,9 @@ namespace Modulo13
 			example.Show();
 			var value = example.IntValue;
 			example.MyEvent += Example_MyEvent;
+
+			var example2 = (IExample2)example;
+			example2.Value = 0;
 		}
 
 		private void Example_MyEvent(int obj)
@@ -22,11 +25,16 @@ namespace Modulo13
 		}
 	}
 
-	public interface IExample
+	public interface IExample2
+	{
+		int Value { get; set; }
+	}
+
+	public interface IExample : IExample2
 	{
 		// + Métodos abstratos
 		// + Propriedades
-		// + Indexes
+		// + Indexers
 		// + Eventos
 
 		// - Métodos não abstratos
@@ -46,9 +54,10 @@ namespace Modulo13
 		public void Show();
 	}
 
-	public class MyClass : IExample
+	public class MyClass : IExample, IExample2
 	{
 		public int IntValue { get; }
+		int IExample2.Value { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
 		public event Action<int> MyEvent;
 
@@ -56,6 +65,11 @@ namespace Modulo13
 		{
 			Debug.Log("Show");
 			MyEvent?.Invoke(0);
+		}
+
+		public void Hide()
+		{
+			Debug.Log("Hide");
 		}
 	}
 }
