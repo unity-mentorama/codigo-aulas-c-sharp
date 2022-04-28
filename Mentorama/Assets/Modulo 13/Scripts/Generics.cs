@@ -6,59 +6,48 @@ namespace Modulo13
 	{
 		private void Start()
 		{
-			Bag<int> intBag = new Bag<int>(10);
+			DataStore<string> strStore = new DataStore<string>();
+			strStore.Data = "Hello World!";
+			//strStore.Data = 123; // Erro de compilação
 
-			intBag.Add(0, 42);
-			int first = intBag.First;
+			DataStore<int> intStore = new DataStore<int>();
+			intStore.Data = 100;
+			//intStore.Data = "Hello World!"; // Erro de compilação
+
+			KeyValuePair<int, string> kvp1 = new KeyValuePair<int, string>();
+			kvp1.Key = 100;
+			kvp1.Value = "Cem";
+
+			KeyValuePair<string, string> kvp2 = new KeyValuePair<string, string>();
+			kvp2.Key = "Lex";
+			kvp2.Value = "Alexandre Melotti";
 		}
+
+		public static T Convert<T>(object obj)
+		{
+			return (T)obj;
+		}
+	}
+
+	//class DataStore<T> where T : class
+	//class DataStore<T> where T : class?
+	//class DataStore<T> where T : struct
+	//class DataStore<T> where T : new()
+	//class DataStore<T> where T : notnull
+	//class DataStore<T> where T : unmanaged
+	//class DataStore<T> where T : MonoBehaviour
+	//class DataStore<T> where T : IExample
+	class DataStore<T>
+	{
+		public T Data { get; set; }
+	}
+
+	//class KeyValuePair<TKey, TValue> where TKey : TValue
+	class KeyValuePair<TKey, TValue>
+	{
+		public TKey Key { get; set; }
+		public TValue Value { get; set; }
 	}
 
 	public delegate void SimpleDelegate<T>(T n);
-
-	//class Bag<T> where T : class
-	//class Bag<T> where T : class?
-	//class Bag<T> where T : struct
-	//class Bag<T> where T : new()
-	//class Bag<T> where T : notnull
-	//class Bag<T> where T : unmanaged
-	//class Bag<T> where T : MonoBehaviour
-	//class Bag<T> where T : IExample
-	//class Bag<T, U> where T : U
-	public class Bag<T>
-	{
-		private T _lastAddedItem;
-
-		private T[] _items;
-
-		public int Capacity { get => _items.Length; }
-		public T First { get => _items[0]; }
-		public T Last { get => _items[_items.Length - 1]; }
-		public T LastAdded { get => _lastAddedItem; }
-
-
-		public event SimpleDelegate<T> OnItemAdded;
-
-		public Bag(int capacity)
-		{
-			_items = new T[capacity];
-		}
-
-		public void Add(int index, T newItem)
-		{
-			_items[index] = newItem;
-			_lastAddedItem = newItem;
-
-			OnItemAdded?.Invoke(newItem);
-		}
-
-		public T GetItem(int index)
-		{
-			return _items[index];
-		}
-
-		public static T Convert<U>(U oi) where U : T
-		{
-			return (T)oi;
-		}
-	}
 }
