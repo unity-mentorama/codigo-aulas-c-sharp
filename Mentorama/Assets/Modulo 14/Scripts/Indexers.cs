@@ -9,15 +9,17 @@ namespace Modulo14
 			IndexableClass indexableClass = new IndexableClass();
 
 			indexableClass[0] = 42;
-			Debug.Log(indexableClass["42"]);
+			Debug.Log(indexableClass[12]);
 			Debug.Log(indexableClass["Lex"]);
 			Debug.Log(indexableClass[5, 6]);
 
 			Bag<string> bag = new Bag<string>(10);
-			bag.Add(0, "zero");
-			bag.Add(1, "um");
-			bag.Add(2, "dois");
-			bag.Add(3, "três");
+
+			//bag[-1] = "oi"; // Causa exception
+			bag[0] = "zero";
+			bag[1] = "um";
+			bag[2] = "dois";
+			bag[3] = "três";
 
 			for (int i = 0; i < bag.Capacity; i++)
 			{
@@ -37,7 +39,7 @@ namespace Modulo14
 
 			set
 			{
-				Debug.Log($"key {key}, value {value}");
+				Debug.Log($"key[{key}] = value {value}");
 			}
 		}
 

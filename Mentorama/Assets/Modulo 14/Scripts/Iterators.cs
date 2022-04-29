@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,6 +9,9 @@ namespace Modulo14
 		private void Start()
 		{
 			var bag = new Bag<int>(10);
+
+			bag[5] = 42;
+
 			foreach (var item in bag)
 			{
 				Debug.Log(item);
@@ -63,9 +67,9 @@ namespace Modulo14
 			}
 		}
 
-		private class ForeachableClass : System.Collections.IEnumerable
+		private class ForeachableClass : IEnumerable
 		{
-			public System.Collections.IEnumerator GetEnumerator()
+			public IEnumerator GetEnumerator() // Duck Typing
 			{
 				yield return 1;
 				yield return 2;

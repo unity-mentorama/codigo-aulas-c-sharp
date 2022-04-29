@@ -14,11 +14,11 @@ namespace Modulo14
 			}
 			catch (InvalidItemException e)
 			{
-				Debug.Log($"Teve erro: {e.Message}");
+				Debug.LogError(e.Message);
 			}
 			catch (Exception e)
 			{
-				Debug.Log($"Teve erro: {e.Message}");
+				Debug.LogError(e.Message);
 			}
 			finally
 			{

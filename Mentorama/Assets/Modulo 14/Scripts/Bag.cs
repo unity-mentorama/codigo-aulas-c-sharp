@@ -1,6 +1,6 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
 namespace Modulo14
 {
@@ -16,9 +16,7 @@ namespace Modulo14
 			{
 				if (index < 0 || index >= _items.Length)
 				{
-					//throw new IndexOutOfRangeException();
-					Debug.LogError("Index com valor inválido.");
-					return default(T);
+					throw new IndexOutOfRangeException();
 				}
 
 				return _items[index];
@@ -28,9 +26,7 @@ namespace Modulo14
 			{
 				if (index < 0 || index >= _items.Length)
 				{
-					//throw new IndexOutOfRangeException();
-					Debug.LogError("Index com valor inválido.");
-					return;
+					throw new IndexOutOfRangeException();
 				}
 
 				_items[index] = value;
@@ -62,7 +58,10 @@ namespace Modulo14
 
 		public IEnumerator<T> GetEnumerator()
 		{
-			return ((IEnumerable<T>)_items).GetEnumerator();
+			for (int i = 0; i < _items.Length; i++)
+			{
+				yield return _items[i];
+			}
 		}
 
 		IEnumerator IEnumerable.GetEnumerator()
