@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Modulo15
 {
-	public class SortedCollections : MonoBehaviour
+	public class SortableObjects : MonoBehaviour
 	{
 		private void Start()
 		{
@@ -39,11 +39,11 @@ namespace Modulo15
 		{
 			List<Item> items = new List<Item>();
 
-			items.Add(new Item() { Value = 4, Weight = 10 });
-			items.Add(new Item() { Value = 1, Weight = 20 });
-			items.Add(new Item() { Value = 2, Weight = 15 });
-			//items.Add(new Item() { Value = 4, Weight = 15 });
-			//items.Add(new Item() { Value = 2, Weight = 17 });
+			items.Add(new Item() { Value = 4, Weight = 10 }); // 0
+			items.Add(new Item() { Value = 1, Weight = 20 }); // 1
+			items.Add(new Item() { Value = 2, Weight = 15 }); // 2
+			items.Add(new Item() { Value = 4, Weight = 15 }); // 3
+			items.Add(new Item() { Value = 2, Weight = 17 }); // 4
 
 			Helper.UnityLogCollection(items);
 
@@ -63,11 +63,11 @@ namespace Modulo15
 		{
 			List<ComparableItem> items = new List<ComparableItem>();
 
-			items.Add(new ComparableItem() { Value = 4, Weight = 10 });
-			items.Add(new ComparableItem() { Value = 1, Weight = 15 });
-			items.Add(new ComparableItem() { Value = 2, Weight = 17 });
-			//items.Add(new ComparableItem() { Value = 4, Weight = 15 });
-			//items.Add(new ComparableItem() { Value = 2, Weight = 17 });
+			items.Add(new ComparableItem() { Value = 4, Weight = 10 }); // 0
+			items.Add(new ComparableItem() { Value = 1, Weight = 15 }); // 1
+			items.Add(new ComparableItem() { Value = 2, Weight = 17 }); // 2
+			items.Add(new ComparableItem() { Value = 4, Weight = 15 }); // 3
+			items.Add(new ComparableItem() { Value = 2, Weight = 17 }); // 4
 
 			Helper.UnityLogCollection(items);
 
@@ -86,13 +86,13 @@ namespace Modulo15
 
 		private void EqualityExample()
 		{
-			List<EquitableItem> items = new List<EquitableItem>();
+			List<EquatableItem> items = new List<EquatableItem>();
 
-			items.Add(new EquitableItem() { Value = 4, Weight = 10 });
-			items.Add(new EquitableItem() { Value = 1, Weight = 15 });
-			items.Add(new EquitableItem() { Value = 2, Weight = 17 });
-			items.Add(new EquitableItem() { Value = 4, Weight = 15 });
-			items.Add(new EquitableItem() { Value = 2, Weight = 17 });
+			items.Add(new EquatableItem() { Value = 4, Weight = 10 }); // 0
+			items.Add(new EquatableItem() { Value = 1, Weight = 15 }); // 1
+			items.Add(new EquatableItem() { Value = 2, Weight = 17 }); // 2
+			items.Add(new EquatableItem() { Value = 4, Weight = 15 }); // 3
+			items.Add(new EquatableItem() { Value = 2, Weight = 17 }); // 4
 
 			Helper.UnityLogCollection(items);
 
@@ -155,7 +155,7 @@ namespace Modulo15
 			}
 		}
 
-		private class EquitableItem : ComparableItem, IEquatable<Item>
+		private class EquatableItem : Item, IEquatable<Item>
 		{
 			public bool Equals(Item other)
 			{
@@ -163,35 +163,49 @@ namespace Modulo15
 			}
 		}
 
+#pragma warning disable 0660, 0661 // Este código retira os warning
 		private class OperatorOverloading : ComparableItem, IEquatable<Item>
 		{
+#pragma warning restore 0660, 0661 // Este código restaura os warning
 			public bool Equals(Item other)
 			{
 				return Value == other.Value && Weight == other.Weight;
 			}
 
-			public static bool operator ==(OperatorOverloading a, OperatorOverloading b)
+			public static bool operator ==(OperatorOverloading lhs, OperatorOverloading rhs)
 			{
-				return a.Equals(b);
+				return lhs.Equals(rhs);
 			}
 
-			public static bool operator !=(OperatorOverloading a, OperatorOverloading b)
+			public static bool operator !=(OperatorOverloading lhs, OperatorOverloading rhs)
 			{
-				return !a.Equals(b);
-			}
-		}
-
-		private class WeightEqualityComparer : IEqualityComparer<Item>
-		{
-			public bool Equals(Item x, Item y)
-			{
-				return x.Weight == y.Weight;
+				return !lhs.Equals(rhs);
 			}
 
-			public int GetHashCode(Item obj)
-			{
-				throw new NotImplementedException();
-			}
+			// x + y
+			// x - y
+			// x * y
+			// x / y
+			// x % y
+			// x & y
+			// x | y
+			// x ^ y
+			// x << y
+			// x >> y
+			// x == y
+			// x != y
+			// x < y
+			// x > y
+			// x <= y
+			// x >= y
+			// +x
+			// -x
+			// !x
+			// ~x
+			// ++
+			// --
+			// true
+			// false
 		}
 	}
 }

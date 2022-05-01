@@ -73,6 +73,9 @@ namespace Modulo15
 			Debug.Log("Mudando o valor de Marte.");
 			hashTable["Marte"] = true;
 
+			hashTable["Lua"] = false;
+			//hashTable.Add("Lua", "Ana"); // Chave duplicada
+
 			Helper.UnityLogDictionary(hashTable);
 		}
 
@@ -104,6 +107,7 @@ namespace Modulo15
 			Debug.Log($"Terra: {dictionary["Terra"]}");
 			Debug.Log($"Marte: {dictionary["Marte"]}");
 			//Debug.Log($"Lua: {dictionary["Lua"]}"); // Chave inexistente
+
 			dictionary["Lua"] = 3476;
 
 			if (dictionary.TryGetValue("Lua", out var value))

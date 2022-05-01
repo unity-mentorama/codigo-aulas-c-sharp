@@ -14,7 +14,7 @@ namespace Modulo15
 			MyGenericCollection<int> genericCollection = new MyGenericCollection<int>();
 		}
 
-		private class MyCollection : ICollection
+		private class MyCollection : ICollection, IEnumerable
 		{
 			public int Count => throw new NotImplementedException();
 
@@ -33,7 +33,7 @@ namespace Modulo15
 			}
 		}
 
-		private class MyGenericCollection<T> : ICollection<T>
+		private class MyGenericCollection<T> : ICollection<T>, IEnumerable<T>
 		{
 			public int Count => throw new NotImplementedException();
 

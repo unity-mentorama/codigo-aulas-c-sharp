@@ -45,7 +45,7 @@ namespace Modulo15
 			Queue<int> queue = new Queue<int>();
 
 			queue.Enqueue(42);
-			queue.Enqueue('A');
+			queue.Enqueue('A'); // 65
 			queue.Enqueue(13);
 			queue.Enqueue(7);
 			//queue.Enqueue(9.75f); // Tipo inválido
@@ -97,7 +97,7 @@ namespace Modulo15
 			Stack<int> stack = new Stack<int>();
 
 			stack.Push(42);
-			stack.Push('A');
+			stack.Push('A'); // 65
 			stack.Push(13);
 			stack.Push(7);
 			//stack.Push(9.75f); // Tipo inválido
