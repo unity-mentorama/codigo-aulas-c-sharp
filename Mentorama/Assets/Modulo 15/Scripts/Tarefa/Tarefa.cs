@@ -9,12 +9,12 @@ namespace Modulo15
 		{
 			Inventory<Item> mainBag = new Inventory<Item>(10);
 
-			// Outros exemplos de invent·rios que podemos ter.
+			// Outros exemplos de invent√°rios que podemos ter.
 			Inventory<Potion> potionBag = new Inventory<Potion>(4);
 			Inventory<Armor> armorSlot = new Inventory<Armor>(1);
 			Inventory<Weapon> weaponSlot = new Inventory<Weapon>(1);
 
-			// Criando alguns itens para testar nosso cÛdigo.
+			// Criando alguns itens para testar nosso c√≥digo.
 			Potion minorHealthPotion = MakeMinorHealthPotion();
 			Potion majorHealthPotion = MakeMajorHealthPotion();
 			Armor chainArmor = MakeChainArmor();
@@ -56,7 +56,7 @@ namespace Modulo15
 			Debug.Log($"Take({auxPosition}): {mainBag.Take(auxPosition).Name}");
 			PrintInventoryItems(mainBag);
 
-			// Tentando pegar item que j· foi removido.
+			// Tentando pegar item que j√° foi removido.
 			var auxItemType = ItemType.MinorHealthPotion;
 			Debug.Log($"TryTake({auxItemType})");
 			if (mainBag.TryTake(auxItemType, out var itemTaken))
@@ -65,7 +65,7 @@ namespace Modulo15
 			}
 			else
 			{
-				Debug.Log($"N„o conseguiu pegar item do tipo: {auxItemType}");
+				Debug.Log($"N√£o conseguiu pegar item do tipo: {auxItemType}");
 			}
 			PrintInventoryItems(mainBag);
 
@@ -83,16 +83,16 @@ namespace Modulo15
 			mainBag.Swap(index1, index2);
 			PrintInventoryItems(mainBag);
 
-			// Checando se contÈm itens.
+			// Checando se cont√©m itens.
 			auxItemType = ItemType.MinorHealthPotion;
 			Debug.Log($"Contains({auxItemType})");
 			if (mainBag.Contains(auxItemType))
 			{
-				Debug.Log($"Bag contÈm: {auxItemType}");
+				Debug.Log($"Bag cont√©m: {auxItemType}");
 			}
 			else
 			{
-				Debug.Log($"Bag n„o contÈm: {auxItemType}");
+				Debug.Log($"Bag n√£o cont√©m: {auxItemType}");
 			}
 			PrintInventoryItems(mainBag);
 
@@ -100,11 +100,11 @@ namespace Modulo15
 			Debug.Log($"Contains({auxItemType})");
 			if (mainBag.Contains(auxItemType))
 			{
-				Debug.Log($"Bag contÈm: {auxItemType}");
+				Debug.Log($"Bag cont√©m: {auxItemType}");
 			}
 			else
 			{
-				Debug.Log($"Bag n„o contÈm: {auxItemType}");
+				Debug.Log($"Bag n√£o cont√©m: {auxItemType}");
 			}
 			PrintInventoryItems(mainBag);
 
@@ -113,25 +113,25 @@ namespace Modulo15
 			Debug.Log($"Contains({newDagger.Name})");
 			if (mainBag.Contains(newDagger))
 			{
-				Debug.Log($"Bag contÈm: {newDagger.Name}");
+				Debug.Log($"Bag cont√©m: {newDagger.Name}");
 			}
 			else
 			{
-				Debug.Log($"Bag n„o contÈm: {newDagger.Name}");
+				Debug.Log($"Bag n√£o cont√©m: {newDagger.Name}");
 			}
 			PrintInventoryItems(mainBag);
 
-			// Verificando qual item est· numa certa posiÁ„o de formas diferentes.
+			// Verificando qual item est√° numa certa posi√ß√£o de formas diferentes.
 			auxPosition = 0;
 			Debug.Log($"Peek({auxPosition})");
-			// Cuidado, pode causar exception ao tentar pegar o .Name caso n„o haja item na posiÁ„o.
-			Debug.Log($"Item na posiÁ„o {auxPosition}: {mainBag.Peek(auxPosition).Name}");
+			// Cuidado, pode causar exception ao tentar pegar o .Name caso n√£o haja item na posi√ß√£o.
+			Debug.Log($"Item na posi√ß√£o {auxPosition}: {mainBag.Peek(auxPosition).Name}");
 			PrintInventoryItems(mainBag);
 
 			auxPosition = 3;
 			Debug.Log($"mainBag[{auxPosition}]");
-			// Cuidado, pode causar exception ao tentar pegar o .Name caso n„o haja item na posiÁ„o.
-			Debug.Log($"Item na posiÁ„o {auxPosition}: {mainBag[auxPosition].Name}");
+			// Cuidado, pode causar exception ao tentar pegar o .Name caso n√£o haja item na posi√ß√£o.
+			Debug.Log($"Item na posi√ß√£o {auxPosition}: {mainBag[auxPosition].Name}");
 			PrintInventoryItems(mainBag);
 
 			// Limpando a bag.
