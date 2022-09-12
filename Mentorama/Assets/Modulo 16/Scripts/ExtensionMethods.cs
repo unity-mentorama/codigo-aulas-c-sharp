@@ -7,12 +7,19 @@ namespace Modulo16
 		void Start()
 		{
 			gameObject.MoveUp();
+			GameObjectExtensions.MoveUp(gameObject);
+
 			gameObject.MoveUp(5);
-			gameObject.MoveUpChained(2).MoveUp();
+			GameObjectExtensions.MoveUp(gameObject, 5);
+
+			gameObject.MoveUpChained(2).MoveUpChained(10).MoveUp();
+			var newGameObject = GameObjectExtensions.MoveUpChained(gameObject, 2);
+			newGameObject = GameObjectExtensions.MoveUpChained(gameObject, 10);
+			newGameObject.MoveUp();
 		}
 	}
 
-	public static class ExampleClass
+	public static class GameObjectExtensions
 	{
 		public static void MoveUp(this GameObject gameObject)
 		{

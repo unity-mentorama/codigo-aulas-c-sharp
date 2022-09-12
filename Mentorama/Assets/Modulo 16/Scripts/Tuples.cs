@@ -6,20 +6,20 @@ namespace Modulo16
 	{
 		private void Start()
 		{
-			// Tuple type				// Typle literal
+			// Tuple type				// Tuple literal
 			(int min, int max) minMax = (min: 1, max: 2);
 			Debug.Log($"minMax.min: {minMax.min} - minMax.max: {minMax.max}");
 
-			minMax = (3, 4);
-			Debug.Log($"minMax.min: {minMax.min} - minMax.max: {minMax.max}");
-
-			(int, int) oi = MinMax(new int[] { 2, 1024, 3, -5, 13, 0, 42 });
-			Debug.Log($"oi.item1: {oi.Item1} - oi.item2: {oi.Item2}");
+			(int, int) simplifiedMinMax = (3, 4);
+			Debug.Log($"simplifiedMinMax.Item1: {simplifiedMinMax.Item1} - simplifiedMinMax.Item2: {simplifiedMinMax.Item2}");
 
 #pragma warning disable CS0219, CS8123
-			(int a, int b, int c, int, int) tuple =
+			(int a, float b, short c, double, uint) tuple =
 				(a: 10, errado: 20, 30, desnecessario: 40, 50);
 #pragma warning restore CS0219, CS8123
+
+			var newMinMax = MinMax(new int[] { 2, 1024, 3, -5, 13, 0, 42 });
+			Debug.Log($"newMinMax.min: {newMinMax.min} - newMinMax.max: {newMinMax.max}");
 		}
 
 		private (int min, int max) MinMax(int[] array)

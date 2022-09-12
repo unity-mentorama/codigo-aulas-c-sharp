@@ -8,15 +8,15 @@ namespace Modulo16
 	{
 		private void Start()
 		{
-			// 1. Inicialização (para trabalhar com uma fonte de dados)
-			// 2. Condição (onde, filtro, condição de ordenação)
-			// 3. Seleção (seleção singular, seleção em grupos ou "joining")
-
 			#region Data Source
 			List<int> numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 			#endregion
 
 			#region Consulta
+			// 1. Inicialização (para trabalhar com uma fonte de dados)
+			// 2. Condição (onde, filtro, condição de ordenação)
+			// 3. Seleção (seleção singular, seleção em grupos ou "joining")
+
 			// Consulta LINQ usando Query Syntax
 			var QuerySyntax = from obj in numbers   // Inicialização
 							  where obj > 5         // Condição
@@ -61,8 +61,6 @@ namespace Modulo16
 			var tmp1 = Enumerable.Where(words, word => word.Length > 4);
 			var tmp2 = Enumerable.OrderBy(tmp1, word => word);
 			var query3 = Enumerable.Select(tmp2, word => word.ToUpper());
-
-			//query3 = Enumerable.Select(tmp2, (word, index) => word.ToUpper());
 
 			// Query syntax
 			IEnumerable<string> query4 = from word in words // Range variable

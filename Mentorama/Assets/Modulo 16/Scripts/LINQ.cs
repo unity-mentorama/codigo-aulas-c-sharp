@@ -18,7 +18,7 @@ namespace Modulo16
 			words.Select(word => new
 			{
 				firstLetter = word[0],
-				lastLetter = word[word.Length - 1]
+				lastLetter = word[word.Length ^ 1]
 			});
 
 			IEnumerable<char> selectManyQuery = words.SelectMany(word => word);
@@ -28,7 +28,7 @@ namespace Modulo16
 			#endregion
 
 			#region Ordering
-			//Ordenar os elementos em uma sequência.
+			// Ordenar os elementos em uma sequência.
 
 			words.OrderBy(word => word);
 			words.OrderByDescending(word => word);
@@ -39,7 +39,6 @@ namespace Modulo16
 
 			#region Filtering
 			// Filtrar determinados elementos de uma collection.
-
 
 			words.Where(word => word.Length > 4);
 			words.OfType<char>();
