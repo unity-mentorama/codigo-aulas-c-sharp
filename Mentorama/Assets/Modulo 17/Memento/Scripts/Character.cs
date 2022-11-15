@@ -12,12 +12,23 @@ namespace Modulo17.Memento
 
 		public CharacterData Data { get; protected set; }
 
-		public void SetMemento(CharacterData data)
+		public void Awake()
 		{
-			Data = data;
+			Data = new CharacterData
+			{
+				WalkSpeed = Random.Range(1f, 3f),
+				BodyColor = Random.ColorHSV(),
+				HatColor = Random.ColorHSV()
+			};
 
-			Body.material.color = Data.BodyColor;
-			Hat.material.color = Data.HatColor;
+			UpdateMaterials();
+		}
+
+		public void SetMemento(CharacterMemento memento)
+		{
+			Data = memento.Data;
+
+			UpdateMaterials();
 		}
 
 		public CharacterMemento CreateMemento()
@@ -25,10 +36,10 @@ namespace Modulo17.Memento
 			return new CharacterMemento(Data);
 		}
 
-		public CharacterData RestoreFromMemento(CharacterMemento memento)
+		private void UpdateMaterials()
 		{
-			SetMemento(memento.Data);
-			return Data;
+			Body.material.color = Data.BodyColor;
+			Hat.material.color = Data.HatColor;
 		}
 
 		private void FixedUpdate()

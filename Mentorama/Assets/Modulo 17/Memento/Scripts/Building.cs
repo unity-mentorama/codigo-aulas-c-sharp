@@ -31,7 +31,7 @@ namespace Modulo17.Memento
 				{
 					var oldCharacter = Instantiate(CharacterPrefab, ExitSpot.position, Quaternion.identity);
 
-					oldCharacter.RestoreFromMemento(_savedMementos.Dequeue());
+					oldCharacter.SetMemento(_savedMementos.Dequeue());
 
 					oldCharacter.MoveDirection = new Vector3(0, 0, -1);
 				}

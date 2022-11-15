@@ -8,11 +8,13 @@ namespace Modulo17.Singleton.Example1
 		public GameObject ScorePanelPrefab;
 		public Transform AllScorePanels;
 
+		public int IncrementScoreValue = 5;
+
 		private void Update()
 		{
 			if (Input.GetKeyDown(KeyCode.Space))
 			{
-				ScoreManager.Instance.AddScore(5);
+				ScoreManager.Instance.AddScore(IncrementScoreValue);
 			}
 			else if (Input.GetKeyDown(KeyCode.Alpha1))
 			{

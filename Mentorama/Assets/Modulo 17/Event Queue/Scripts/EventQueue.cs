@@ -28,7 +28,7 @@ namespace Modulo17.EventQueue
 		{
 			var @event = _eventQueue.Dequeue();
 			_currentEventTimer += @event.Duration;
-			DispatchEvent(@event);
+			DispatchEvent?.Invoke(@event);
 			_playingEvent = true;
 		}
 

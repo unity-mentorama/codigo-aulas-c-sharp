@@ -526,6 +526,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ScorePanelPrefab: {fileID: 7993169015280750049, guid: 421932cf7b10478488f505fa894c3a8b, type: 3}
   AllScorePanels: {fileID: 1237600735}
+  IncrementScoreValue: 10
 --- !u!4 &1916244781
 Transform:
   m_ObjectHideFlags: 0

@@ -34,7 +34,6 @@ namespace Modulo17.Flyweight.Example2
 				// Posiciona aleatoriamente na scene
 				float x = Random.Range(MinPosition.x, MaxPosition.x);
 				float z = Random.Range(MinPosition.y, MaxPosition.y);
-
 				newSoldier.transform.position = new Vector3(x, 0.5f, z);
 
 				// Calcula próxima weaponType

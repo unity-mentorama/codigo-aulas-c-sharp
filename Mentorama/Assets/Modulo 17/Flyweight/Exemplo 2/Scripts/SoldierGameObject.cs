@@ -34,7 +34,7 @@ namespace Modulo17.Flyweight.Example2
 				{
 					_soldier.LevelUp();
 					UpdatePanel();
-					Debug.LogFormat($"Leveling up all {GetSolderClassName()} to level {_soldier.Stats.Level}");
+					Debug.LogFormat($"Level up em todos os {GetSolderClassName()}s para o nível {_soldier.Stats.Level}!");
 				}
 				// Dano na instância única
 				else if (Input.GetMouseButtonDown(0))
