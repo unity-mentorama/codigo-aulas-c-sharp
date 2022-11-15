@@ -736,7 +736,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WalkSpeed: 5
-  RunSpeed: 8
+  RunSpeed: 10
 --- !u!1 &1983277422
 GameObject:
   m_ObjectHideFlags: 0
