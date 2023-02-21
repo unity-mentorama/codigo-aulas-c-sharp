@@ -19,12 +19,12 @@ namespace Modulo19
 
 		public override void OnInspectorGUI()
 		{
-			////serializedObject.Update();
-			//EditorGUILayout.PropertyField(_lookPosition);
-			////serializedObject.ApplyModifiedProperties();
+			serializedObject.Update();
+			EditorGUILayout.PropertyField(_lookPosition);
+			serializedObject.ApplyModifiedProperties();
 
-			_lookAtPoint.LookPosition = EditorGUILayout.Vector3Field(new GUIContent("Look Position"), _lookAtPoint.LookPosition, null);
-			//_lookAtPoint.Update();
+			//_lookAtPoint.LookPosition = EditorGUILayout.Vector3Field(new GUIContent("Look Position"), _lookAtPoint.LookPosition, null);
+			_lookAtPoint.Update();
 
 			EditorGUILayout.Separator();
 
@@ -39,16 +39,16 @@ namespace Modulo19
 			}
 		}
 
-		//public void OnSceneGUI()
-		//{
-		//	EditorGUI.BeginChangeCheck();
-		//	Vector3 position = Handles.PositionHandle(_lookAtPoint.LookPosition, Quaternion.identity);
-		//	if (EditorGUI.EndChangeCheck())
-		//	{
-		//		Undo.RecordObject(target, "Move point");
-		//		_lookAtPoint.LookPosition = position;
-		//		_lookAtPoint.Update();
-		//	}
-		//}
+		public void OnSceneGUI()
+		{
+			EditorGUI.BeginChangeCheck();
+			Vector3 position = Handles.PositionHandle(_lookAtPoint.LookPosition, Quaternion.identity);
+			if (EditorGUI.EndChangeCheck())
+			{
+				Undo.RecordObject(target, "Move point");
+				_lookAtPoint.LookPosition = position;
+				_lookAtPoint.Update();
+			}
+		}
 	}
 }

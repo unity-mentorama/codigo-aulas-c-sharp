@@ -11,7 +11,7 @@ namespace Modulo19
 		[MenuItem("Mentorama/Do Undo", priority = 4)]
 		private static void OpenWindow()
 		{
-			GetWindow<DoUndoEditor>().Show();
+			GetWindow<DoUndoEditor>();
 		}
 
 		private void OnGUI()

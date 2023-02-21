@@ -1,6 +1,8 @@
 using System.Reflection;
+#if UNITY_EDITOR
 using UnityEditor;
 using UnityEditorInternal;
+#endif
 using UnityEngine;
 
 namespace Modulo19
@@ -34,7 +36,7 @@ namespace Modulo19
 	}
 
 #if UNITY_EDITOR
-	//[CustomPropertyDrawer(typeof(MyCustomType))]
+	[CustomPropertyDrawer(typeof(MyCustomType))]
 	public class MyCustomTypeDrawer : PropertyDrawer
 	{
 		private readonly float _lineHeight = EditorGUIUtility.singleLineHeight;
@@ -144,7 +146,7 @@ namespace Modulo19
 			}
 			else
 			{
-				EditorGUI.HelpBox(textureRect, "No texture found", MessageType.Info);
+				EditorGUI.HelpBox(textureRect, "No texture found", MessageType.Warning);
 			}
 
 			// Fouldouts

@@ -2,8 +2,8 @@ using UnityEngine;
 
 namespace Modulo19
 {
-	//[CreateAssetMenu(fileName = "New ScriptableObject", menuName = "ScriptableObjects/Example")]
-	public class ExampleScriptableObject : ScriptableObject//, ISerializationCallbackReceiver
+	[CreateAssetMenu(fileName = "New ScriptableObject", menuName = "ScriptableObjects/Example")]
+	public class ExampleScriptableObject : ScriptableObject, ISerializationCallbackReceiver
 	{
 		public int IntVariable;
 		public string StringVariable;
@@ -11,17 +11,17 @@ namespace Modulo19
 
 		private void OnEnable()
 		{
-			Debug.Log("OnEnable");
+			//Debug.Log("OnEnable");
 		}
 
 		private void OnDisable()
 		{
-			Debug.Log("OnDisable");
+			//Debug.Log("OnDisable");
 		}
 
 		private void OnDestroy()
 		{
-			Debug.Log("OnDestroy");
+			//Debug.Log("OnDestroy");
 		}
 
 		public void OnBeforeSerialize()

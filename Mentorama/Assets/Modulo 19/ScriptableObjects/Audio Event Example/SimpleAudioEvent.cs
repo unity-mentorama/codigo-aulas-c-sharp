@@ -2,7 +2,7 @@
 
 namespace Modulo19
 {
-	//[CreateAssetMenu(menuName = "ScriptableObjects/Audio Event")]
+	[CreateAssetMenu(menuName = "ScriptableObjects/Audio Event")]
 	public class SimpleAudioEvent : ScriptableObject
 	{
 		public AudioClip[] Clips;

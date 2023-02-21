@@ -8,10 +8,8 @@ namespace Modulo19
 	{
 		private void OnSceneGUI()
 		{
-			//DrawDefaultInspector();
-
 			// Pega o componentte Light alvo.
-			Light light = (Light)target;
+			Light light = target as Light;
 
 			if (light.type == LightType.Point)
 			{

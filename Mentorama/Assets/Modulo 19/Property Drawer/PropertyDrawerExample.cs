@@ -8,6 +8,6 @@ namespace Modulo19
 
 		public Ingredient[] PotionIngredients;
 
-		//public MyCustomType MyCustomType;
+		public MyCustomType MyCustomType;
 	}
 }

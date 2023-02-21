@@ -23,15 +23,15 @@ namespace Modulo19
 	}
 
 #if UNITY_EDITOR
-	//[CustomPropertyDrawer(typeof(Ingredient))]
+	[CustomPropertyDrawer(typeof(Ingredient))]
 	public class IngredientDrawer : PropertyDrawer
 	{
 		public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
 		{
-			//label = new GUIContent("Label", Resources.Load<Texture2D>("Mentorama-icon"), "Tooltip")
-			//label.text = "Label";
-			//label.tooltip = "Tooltip";
-			//label.image = Resources.Load("Mentorama-icon") as Texture;
+			//label = new GUIContent("Label", Resources.Load<Texture2D>("Mentorama-icon"), "Tooltip");
+			label.text = "Label";
+			label.tooltip = "Tooltip";
+			label.image = Resources.Load("Mentorama-icon") as Texture;
 			//label.image = EditorGUIUtility.IconContent("Prefab Icon").image;
 
 			// Desenha label de prefix

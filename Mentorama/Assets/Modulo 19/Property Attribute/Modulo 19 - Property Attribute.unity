@@ -329,8 +329,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FloatValue: 0
-  IntValue: 0
+  IntValue: 1
   StringValue: 
+  ShouldBeAssigned: {fileID: 0}
+  YellowField: {fileID: 0}
+  _serializedHighlight:
+  - {fileID: 0}
+  - {fileID: 0}
   IngredientValue:
     Name: 
     Amount: 1

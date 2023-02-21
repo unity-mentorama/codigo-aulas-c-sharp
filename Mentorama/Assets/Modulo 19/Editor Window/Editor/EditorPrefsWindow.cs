@@ -16,7 +16,7 @@ namespace Modulo19
 		[MenuItem("Mentorama/EditorPrefsWindow", priority = 3)]
 		public static void OpenWindow()
 		{
-			GetWindow(typeof(EditorPrefsWindow));
+			GetWindow<EditorPrefsWindow>();
 		}
 
 		private void OnGUI()
@@ -73,16 +73,16 @@ namespace Modulo19
 			_intValue = 0;
 		}
 
-		//private void OnFocus()
-		//{
-		//	LoadValues();
-		//	Debug.Log("EditorWindow focused");
-		//}
+		private void OnFocus()
+		{
+			LoadValues();
+			Debug.Log("EditorWindow focused");
+		}
 
-		//private void OnDestroy()
-		//{
-		//	SaveValues();
-		//	Debug.Log("EditorWindow destroyed");
-		//}
+		private void OnDestroy()
+		{
+			SaveValues();
+			Debug.Log("EditorWindow destroyed");
+		}
 	}
 }

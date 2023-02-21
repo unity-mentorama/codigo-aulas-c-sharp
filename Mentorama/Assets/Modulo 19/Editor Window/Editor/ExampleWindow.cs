@@ -14,7 +14,7 @@ namespace Modulo19
 		private GameObject _gameObject;
 		private Editor _gameObjectEditor;
 
-		//[MenuItem("Mentorama/Example Window", priority = 2)]
+		[MenuItem("Mentorama/Example Window", priority = 2)]
 		private static void OpenWindow()
 		{
 			GetWindow<ExampleWindow>(false, "Example Window", false);
@@ -58,8 +58,8 @@ namespace Modulo19
 
 			if (EditorGUI.EndChangeCheck())
 			{
-				_gameObjectEditor = Editor.CreateEditor(_gameObject, null);
-				//Editor.CreateCachedEditor(_gameObject, null, ref _gameObjectEditor);
+				//_gameObjectEditor = Editor.CreateEditor(_gameObject, null);
+				Editor.CreateCachedEditor(_gameObject, null, ref _gameObjectEditor);
 			}
 
 			if (_gameObjectEditor != null)

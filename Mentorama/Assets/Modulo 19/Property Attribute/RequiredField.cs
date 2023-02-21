@@ -58,24 +58,28 @@ namespace Modulo19
 						EditorGUI.PropertyField(position, property, label);
 						GUI.color = Color.white;
 					}
+					else
+					{
+						EditorGUI.PropertyField(position, property, label);
+					}
 
 					break;
 
-				//case SerializedPropertyType.Generic:
+				case SerializedPropertyType.Generic:
 
-				//	if (property.type == "Ingredient")
-				//	{
-				//		GUI.color = field.Color;
+					if (property.type == "Ingredient")
+					{
+						GUI.color = field.Color;
 
-				//		var drawer = new IngredientDrawer();
-				//		//var drawer = new MimicOriginalIngredientDrawer();
-				//		drawer.OnGUI(position, property, label);
+						var drawer = new IngredientDrawer();
+						//var drawer = new MimicOriginalIngredientDrawer();
+						drawer.OnGUI(position, property, label);
 
-				//		GUI.color = Color.white;
-				//		return;
-				//	}
+						GUI.color = Color.white;
+						return;
+					}
 
-				//	break;
+					break;
 
 				default:
 					EditorGUI.PropertyField(position, property, label, true);
